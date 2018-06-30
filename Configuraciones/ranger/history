@@ -1,0 +1,50 @@
+shell apack ejemplos.rar ejemplos
+shell apack ejemplos.zip _Case1_phase2_45.docx Case1_Phase2_37.docx Case1_Team71.docx
+shell apack ejemplos.7z Case1_Phase2_37.docx Case1_Team71.docx _Case1_phase2_45.docx
+shell aunpack kde-arch-update-plasmoid.tar.gz
+[1;2S[1;2S[1;2S
+shell nano
+find v
+find lo
+rename Evidencia_02.xlsx
+rename A7_JAL.docx
+find x
+find sh
+find xf
+rename pkg_lfs.txt
+search present
+search makee
+search make
+search mpc
+delete
+rename Actividad_04.xlsx
+rename Ejercicio_04.xlsx
+rename Ejercicio_03.pptx
+open_with mpv
+open_with 
+rename Linux-Wallpaper.png
+mkdir Rogelio Veyan
+open_with nano
+search screenshot
+search applets
+rename applets-screenshooter.png
+rename screenshot.png
+mkdir áreas
+mkdir focus
+rename select
+search window
+rename window.png
+search workspace
+rename workspace.png
+open_with leafpad
+rename EstadosFinancieros_ARA.ods
+compress zip
+compress a.zip
+compress 7zip
+shell zip Evidencia.zip Descargas
+mkdir EvidenciaFinal
+compress PRUEBA.7z
+
+compress 
+rename jaagr.sh
+find log

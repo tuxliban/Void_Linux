@@ -1,0 +1,10 @@
+#!/bin/bash
+
+## Realizar captura de pantalla
+scrot /tmp/screenshot.png
+
+## Aplicar efecto difuso a imagen
+convert /tmp/screenshot.png -blur 0x4 /tmp/screenshotblur.png
+
+## Utilizar imagen previa con i3lock
+i3lock -i /tmp/screenshotblur.png
