@@ -6,7 +6,6 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-alias less='ls -la --color | less -r'
 alias grep='grep --color=auto'
 #PS1='[\u@\h \W]\$ '
 
@@ -53,10 +52,10 @@ alias ins='sudo xbps-install'
 alias layes='setxkbmap -layout es'
 	
 # Desactivar teclado interno
-alias keyoff='xinput set-int-prop 12 "Device Enabled" 8 0'
+alias keyoff='xinput set-int-prop 11 "Device Enabled" 8 0'
 
 # Activar teclado
-#alias keyon='xinput set-int-prop 12 "Device Enabled" 8 1'
+alias keyon='xinput set-int-prop 12 "Device Enabled" 8 1'
 
 # Navegadores web modo texto
 alias google='links -g www.google.com.mx'
@@ -120,4 +119,4 @@ alias arch='cd /mnt && sudo /mnt/arch/bin/arch-chroot /mnt/arch && su skynet'
 alias zombie='ps -el | grep 'Z''
 
 ## Conexión wifi
-alias wifi='sudo wpa_supplicant -B -i wlp5s0 -c /etc/wpa_supplicant/wpa_supplicant-wlp5s0.conf'
+alias wifi='sudo sv resart NetworkManager'
