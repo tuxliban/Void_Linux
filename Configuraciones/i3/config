@@ -210,7 +210,7 @@ bindsym $mod+F1 workspace $wS1; exec urxvt -e ranger
 bindsym $mod+F2 workspace $WS2; exec chromium
 
 ## Telegram
-bindsym $mod+F3 workspace $WS3; exec /usr/bin/telegram-desktop
+bindsym $mod+F3 workspace $WS3; exec /usr/bin/Telegram
 
 ## Reproductor de música
 bindsym $mod+F5 workspace $WS5; exec urxvt -e 'ncmpcpp'
