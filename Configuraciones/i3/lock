@@ -1,10 +1,11 @@
 #!/bin/bash
 
 ## Realizar captura de pantalla
-scrot /tmp/screenshot.png
+#scrot /tmp/screenshot.png
 
 ## Aplicar efecto difuso a imagen
-convert /tmp/screenshot.png -blur 0x4 /tmp/screenshotblur.png
+#convert /tmp/screenshot.png -blur 0x4 /tmp/screenshotblur.png
 
 ## Utilizar imagen previa con i3lock
-i3lock -i /tmp/screenshotblur.png
+#i3lock -i /tmp/screenshotblur.png
+sleep 1; i3lock -k -B --blur --veriftext=Revisando --wrongtext=Incorrecto --keylayout 1 --insidevercolor=00ff38ff --insidewrongcolor=c10000ff --insidecolor=ffffff40 --ringvercolor=0020ffff --ringwrongcolor=e8df02ff --ringcolor=404090ff --linecolor=ffffffff --keyhlcolor=30ccccff --bshlcolor=ff8000ff --timecolor=000000ff
