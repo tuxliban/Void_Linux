@@ -1,0 +1,1 @@
+/home/skynet/Datos/Configuraciones/polybar-scripts/polybar-scripts/info-trash/info-trash.sh

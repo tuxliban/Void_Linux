@@ -384,16 +384,17 @@ margin-bottom = 5
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/info-trash]
 type = custom/script
-exec = ~/.config/polybar/scripts/info-trash/info-trash.sh
+exec = ~/.config/polybar/scripts/info-trash.sh
 interval = 60
-click-left = ~/.config/polybar/scripts/info-trash/info-trash.sh --clean
+click-left = ~/.config/polybar/scripts/info-trash.sh --clean
+format-prefix = " "
 
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/updates-void]
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-void.sh
 interval = 600
-
+format-prefix = "%{F#ff8a00} "
 -------------------------------------------------------------------------------------------------------------------------
 [module/popup-calendar]
 type = custom/script
@@ -401,3 +402,4 @@ exec = ~/.config/polybar/scripts/popup-calendar.sh
 interval = 5
 click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup
 format-underline = #0a6cf5
+-

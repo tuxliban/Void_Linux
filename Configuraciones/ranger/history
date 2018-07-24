@@ -1,50 +1,50 @@
-shell apack ejemplos.rar ejemplos
-shell apack ejemplos.zip _Case1_phase2_45.docx Case1_Phase2_37.docx Case1_Team71.docx
-shell apack ejemplos.7z Case1_Phase2_37.docx Case1_Team71.docx _Case1_phase2_45.docx
-shell aunpack kde-arch-update-plasmoid.tar.gz
-[1;2S[1;2S[1;2S
-shell nano
-find v
-find lo
-rename Evidencia_02.xlsx
-rename A7_JAL.docx
-find x
-find sh
-find xf
-rename pkg_lfs.txt
-search present
-search makee
-search make
-search mpc
-delete
-rename Actividad_04.xlsx
-rename Ejercicio_04.xlsx
-rename Ejercicio_03.pptx
-open_with mpv
-open_with 
-rename Linux-Wallpaper.png
-mkdir Rogelio Veyan
-open_with nano
-search screenshot
-search applets
-rename applets-screenshooter.png
-rename screenshot.png
-mkdir áreas
-mkdir focus
-rename select
-search window
-rename window.png
-search workspace
-rename workspace.png
+rename 09.png
+rename 10.png
+rename 11.png
+rename 12.png
+rename 13.png
+shell aunpack ESNES167\ Street\ Fighter\ II\ The\ World\ Warrior\ ESP\ .rar
+mkdir Tecnologías de información
+mkdir Examen_01
+rename Examen_01
+rename 01.png
+rename 02.png
+rename 03.png
+rename 04.png
+rename 05.png
+shell unrar x 123.rar
+rename Tema 3__ Profesional.html
+rename Tema 3__ Profesional_files
+shell aunpack Documentos.zip
+shell pdftotext Copia\ de\ Arch\ install.pdf
+shell fbpdf
+open_with fbpdf
+open_with fbv
+open_with feh
+shell aunpack multibootusb-9.2.0.tar.gz
+shell chmod +x install.py
+shell chmod +x uninstall.py
+shell aun
+rename NaughtyPhotoDay.mp4
+rename Evidencia1_HumbertoSanchez.docx
+rename caso_Parte1.pdf
+mkdir Examen_2
+mkdir Examen_1
+search libre
+shell textmaker18free 
+mkdir Ricardo Bujdud
+mkdir Redes de mercadeo
+mkdir Admon. de las ventas
+shell aunpack wps-office_10.1.0.5707_a21_x86.tar.xz
+shell chmod +x info-trash.sh
 open_with leafpad
-rename EstadosFinancieros_ARA.ods
-compress zip
-compress a.zip
-compress 7zip
-shell zip Evidencia.zip Descargas
-mkdir EvidenciaFinal
-compress PRUEBA.7z
-
-compress 
-rename jaagr.sh
-find log
+mkkdir xbps-src
+shell mkdir xbps-src
+mkdir etc
+delete
+shell sudo nano 10-local.conf
+empty 
+shell sudo rm -r multibootusb-9.2.0
+rename conf
+open_with 
+rename xbps_conf

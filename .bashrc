@@ -12,7 +12,6 @@ alias grep='grep --color=auto'
 #Prompt personalizado
 PS1='\[\e[1;37m\] > \d \t \n \[\e[1;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\] \[\e[1;33m\]\w\[\e[m\] \[\e[0;31m\]\$\[\e[m\]\[\e[0;37m\] '
 
-
 export LESS=-R
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
 export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
@@ -35,6 +34,8 @@ man() {
 
 export EDITOR="nano"
 
+export PATH="/usr/lib/ccache/bin/:$PATH"
+
 ## Autologin en TTY1
 if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
 exec startx
@@ -43,7 +44,7 @@ fi
 # Múltiples consolas
 tmux
 
-## Alias personalizados
+##---------- Alias personalizados -------------##
 
 # Instalación sencilla
 alias ins='sudo xbps-install'
@@ -66,9 +67,6 @@ alias limpiar='sudo xbps-remove -ROov'
 
 # Enviar archivos a papelera
 #alias rm='mv --target-directory ~/.local/share/Trash/files'
-
-# Youtube modo consola
-alias yt='mpsyt'
 
 # Mostrar tamaño directorios
 alias how='du -bsh'
@@ -94,12 +92,6 @@ alias buscar='xbps-query -Rs'
 # Copiar archivos con informacion de transferencia
 alias cp='rsync -Pr'
 
-# Apagar sistema
-alias apg='sudo shutdown -h now'
-
-# Reiniciar sistema
-alias rb='sudo shutdown -r now'
-
 # Borrar solicitando confirmación
 alias rm='rm -Irvd'
 
@@ -110,7 +102,7 @@ alias Sync='rsync -Prtvu --delete'
 alias dropbox='cd ~/.dropbox-dist && ./dropboxd &'
 
 # Buscar FIND
-alias find='find . -name'
+alias Find='find . -name'
 
 # Chroot Archlinux
 alias arch='cd /mnt && sudo /mnt/arch/bin/arch-chroot /mnt/arch && su skynet'
@@ -119,4 +111,4 @@ alias arch='cd /mnt && sudo /mnt/arch/bin/arch-chroot /mnt/arch && su skynet'
 alias zombie='ps -el | grep 'Z''
 
 ## Conexión wifi
-alias wifi='sudo sv resart NetworkManager'
+alias wifi='sudo sv restart NetworkManager'

@@ -1,0 +1,1 @@
+/home/skynet/Datos/Configuraciones/jaagr.sh
