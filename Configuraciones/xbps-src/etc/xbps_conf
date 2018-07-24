@@ -1,0 +1,6 @@
+XBPS_CFLAGS="-march=native -Os -pipe"
+XBPS_CXXFLAGS="${XBPS_CFLAGS}"
+XBPS_ALLOW_RESTRICTED=yes
+XBPS_CCACHE=yes
+CCACHE_DIR="/home/skyet/Datos/Configuraciones/ccache" ccache -s
+XBPS_MAKEJOBS=3
