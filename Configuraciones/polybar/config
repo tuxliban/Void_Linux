@@ -103,7 +103,7 @@ modules-right = ;filesystem xkeyboard cpu temperature volume info-trash eth wlan
 
 [module/xwindow]
 type = internal/xwindow
-label =  %title:0:30:...%
+label = %title:0:30:...%
 
 ; Available tags:
 ;   <label> (default)
@@ -111,6 +111,7 @@ format = <label>
 format-background = #f00
 format-foreground = #000
 format-padding = 1
+format-prefix = " "
 
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/xkeyboard]
@@ -316,9 +317,9 @@ interface = enp7s8
 interval = 3.0
 
 ;format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = "%{F#00a2de} "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %{F#00a2de} %linkspeed%
+label-connected = %linkspeed%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -337,7 +338,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M:%S
 time-alt = %H:%M
 
-format-prefix = 
+;format-prefix = 
 ;format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -395,11 +396,13 @@ type = custom/script
 exec = ~/.config/polybar/scripts/updates-void.sh
 interval = 600
 format-prefix = "%{F#ff8a00} "
--------------------------------------------------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------------------------------------------------
 [module/popup-calendar]
 type = custom/script
 exec = ~/.config/polybar/scripts/popup-calendar.sh
 interval = 5
 click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup
 format-underline = #0a6cf5
--
+
+;-------------------------------------------------------------------------------------------------------------------------
