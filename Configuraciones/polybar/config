@@ -54,7 +54,7 @@ font-2 = Font Awesome 5 Free Solid:pixelsize=8;1
 font-3 = Weather Icons:size=12;1
 
 modules-left = i3
-modules-center = ;date popup-calendar
+modules-center = popup-calendar
 modules-right = mpd updates-void
 
 tray-position = right
@@ -97,7 +97,7 @@ font-3 = Font Awesome 5 Brands Regular:ppixelsize=8;1
 
 modules-left = xwindow
 ;modules-center = 
-modules-right = ;filesystem xkeyboard cpu temperature volume info-trash eth wlan
+modules-right = xkeyboard cpu temperature volume info-trash eth wlan
 
 ########## Módulos ##########
 
@@ -347,7 +347,8 @@ label = %{F#00FFDE} %date% %{F#FFFFFF} %time%
 
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/volume]
-type = internal/volume
+;type = internal/volume
+type = internal/alsa
 format-volume =%{F#9933FF}<ramp-volume> <label-volume>
 format-muted = 0% 
 ramp-volume-0 = 
@@ -365,8 +366,8 @@ format =<ramp> <label>
 format-warn = <ramp> <label-warn>
 ;format-warn-underline = ${self.format-underline}----
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
@@ -401,7 +402,7 @@ format-prefix = "%{F#ff8a00} "
 [module/popup-calendar]
 type = custom/script
 exec = ~/.config/polybar/scripts/popup-calendar.sh
-interval = 5
+interval = 1
 click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup
 format-underline = #0a6cf5
 

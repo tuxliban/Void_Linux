@@ -34,6 +34,7 @@ man() {
 
 export EDITOR="nano"
 
+## Usar ccache para compilar
 export PATH="/usr/lib/ccache/bin/:$PATH"
 
 ## Autologin en TTY1

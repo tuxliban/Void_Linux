@@ -1,50 +1,50 @@
-rename 09.png
-rename 10.png
-rename 11.png
-rename 12.png
-rename 13.png
-shell aunpack ESNES167\ Street\ Fighter\ II\ The\ World\ Warrior\ ESP\ .rar
-mkdir Tecnologías de información
-mkdir Examen_01
-rename Examen_01
+rename Foro3.2.png
+rename Foro4.png
+rename Foro4.1.png
+rename Foro4.2.png
+mkdir Universidad_utel
+mkdir Competencias gerenciales
+rename Foro1.png
+rename Foro1.1.png
+rename foro1.2.png
+rename Foro2.png
+rename Foro2.1.png
+rename Foro2.2.png
+rename A3_LCL.odt
+mkdir Examen_3
+empty 
+rename Vengadores Guerra Infinita.avi
+Examen_04
+mkdir Examen_04
+mkdir Examen_4
+rename FreeBSD-11.2-STABLE-i386-memstick.img
 rename 01.png
 rename 02.png
 rename 03.png
 rename 04.png
 rename 05.png
-shell unrar x 123.rar
-rename Tema 3__ Profesional.html
-rename Tema 3__ Profesional_files
-shell aunpack Documentos.zip
-shell pdftotext Copia\ de\ Arch\ install.pdf
-shell fbpdf
-open_with fbpdf
-open_with fbv
-open_with feh
-shell aunpack multibootusb-9.2.0.tar.gz
-shell chmod +x install.py
-shell chmod +x uninstall.py
-shell aun
-rename NaughtyPhotoDay.mp4
-rename Evidencia1_HumbertoSanchez.docx
-rename caso_Parte1.pdf
-mkdir Examen_2
-mkdir Examen_1
-search libre
-shell textmaker18free 
-mkdir Ricardo Bujdud
-mkdir Redes de mercadeo
-mkdir Admon. de las ventas
-shell aunpack wps-office_10.1.0.5707_a21_x86.tar.xz
-shell chmod +x info-trash.sh
-open_with leafpad
-mkkdir xbps-src
-shell mkdir xbps-src
-mkdir etc
-delete
-shell sudo nano 10-local.conf
-empty 
-shell sudo rm -r multibootusb-9.2.0
-rename conf
+rename 06.png
+rename 2018-08-03-16:36:37_776x631.png
 open_with 
-rename xbps_conf
+rename xbps
+open_with nano
+search linux4.17
+rename i386-dotconfig
+rename template.bak
+rename template
+search linux
+find n
+open_with fbv
+mkdir ExamenFinal
+mkdir Config
+rename aria2
+rename links
+rename mplayer
+rename ssh
+rename zsnes
+rename Void0.png
+rename Void.png
+find ssh
+rename ssh_config
+delete
+
