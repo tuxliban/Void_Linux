@@ -34,7 +34,6 @@ man() {
 
 export EDITOR="nano"
 
-## Usar ccache para compilar
 export PATH="/usr/lib/ccache/bin/:$PATH"
 
 ## Autologin en TTY1
@@ -113,3 +112,10 @@ alias zombie='ps -el | grep 'Z''
 
 ## Conexión wifi
 alias wifi='sudo sv restart NetworkManager'
+
+## Grabar video
+alias gvideo='ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 video.mp4'
+#alias gvideo='
+
+#  Maximo nivel de compresion de archivos
+alias 7z='7z -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on'

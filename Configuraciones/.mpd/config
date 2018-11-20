@@ -1,0 +1,23 @@
+## Directorio de musica
+music_directory "~/Respaldos/Música"
+
+## Directorio de playlist
+playlist_directory	"/home/skynet/.mpd/playlists"
+db_file			"/home/skynet/.mpd/mpd.db"
+log_file		"/home/skynet/.mpd/mpd.log"
+#error_file		"/home/skynet/.mpd/mpd.error"
+pid_file		"/home/skynet/.mpd/mpd.pid"
+state_file		"/home/skynet/.mpd/mpdstate"
+user			"skynet"
+#bind_to_address	"127.0.0.1"
+#port "8362"
+auto_update		"yes"
+
+audio_output {
+type		"alsa"
+name		"HDA Intel"
+auto_resample	"no"
+use_mmap	"yes"
+#server "localhost" # optional
+#sink "alsa_output" # optional
+}

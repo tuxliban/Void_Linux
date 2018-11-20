@@ -1,50 +1,50 @@
-rename Foro3.2.png
-rename Foro4.png
-rename Foro4.1.png
-rename Foro4.2.png
-mkdir Universidad_utel
-mkdir Competencias gerenciales
-rename Foro1.png
-rename Foro1.1.png
-rename foro1.2.png
-rename Foro2.png
-rename Foro2.1.png
-rename Foro2.2.png
-rename A3_LCL.odt
-mkdir Examen_3
-empty 
-rename Vengadores Guerra Infinita.avi
-Examen_04
-mkdir Examen_04
-mkdir Examen_4
-rename FreeBSD-11.2-STABLE-i386-memstick.img
-rename 01.png
-rename 02.png
-rename 03.png
-rename 04.png
-rename 05.png
-rename 06.png
-rename 2018-08-03-16:36:37_776x631.png
-open_with 
-rename xbps
-open_with nano
-search linux4.17
-rename i386-dotconfig
-rename template.bak
-rename template
-search linux
-find n
-open_with fbv
-mkdir ExamenFinal
-mkdir Config
-rename aria2
-rename links
-rename mplayer
-rename ssh
-rename zsnes
-rename Void0.png
-rename Void.png
-find ssh
-rename ssh_config
+rename Formato A1b_02.docx
+rename Formato A2_02.docx
+rename Formato A3_02.docx
+rename Formato A1b_03.docx
+rename Formato A2_03.docx
+rename Formato A3_03.docx
+search neof
+mkdir Actividad_2
+rename A00825440_liderazgo2.pdf
+mkdir Administración del capital de trabajo
+rename Actividad_01.xlsx
+mkdir Gestión del cambio organizacional
+rename Actividad_01.pptx
+rename Actividad4_2González.pdf
+rename Actividad01.docx
+shell aunpack ContblddParNoContdrs.WL-FL.zip
+rename Contabilidad para no contadores.pdf
+mkdir Lecturas
+mkdir Actividad 4
+rename hola
+rename Evidencia_01.odt
+rename Etapa6__Dulcemente.xlsx
+rename Etapa6_Dulcemente.xlsx
+rename Enemigos Públicos.avi
+rename Rescatando al soldado Ryan.mp4
+rename El renacido.mp4
+rename Batman y Superman Enemigos Públicos.avi
+rename Enemigos publicos.mp4
+rename Trabajo_14.docx
+rename Trabajo_1.dotx
+open_with leafpad
+rename Tarea12.docx
+rename Tarea14.docx
+rename Actividad_02.xlsx
+rename Actividad02.odt
+rename A4_JAL.odt
+rename A3_RBSM.doc
+rename A3_RBSM.xlsx
+rename A3_RBSM.pdf
+search RBSM
 delete
-
+search linux4.14
+rename x86_64-dotconfig.bak1
+rename custom_void.bak
+rename custom_void}
+rename x86_64-dotconfig
+shell aunpack li
+rename patch-4.14.81un.xz
+shell aunpack patch-4.14.81.xz
+shell aunpack patch-4.14.80-81.xz

@@ -46,18 +46,18 @@ feh --bg-fill --randomize --no-fehbg ~/Wallpaper/* &
 ### Distribución de teclado
 
 ## Español latinoamericano
-#setxkbmap -layout latam &
+setxkbmap -layout latam &
 
 ## Usar acentos en teclado US
 #setxkbmap us -variant intl
 
 ## Español España
-setxkbmap -layout es &
+#setxkbmap -layout es &
 
 #----------------------------------------------------
 
 ## Activar teclado numérico
-#numlockx &
+numlockx &
 
 #----------------------------------------------------
 
@@ -76,5 +76,10 @@ mpd
 
 #----------------------------------------------------
 
+## Ajustar brillo de pantalla al 2%
+xbacklight -set 2 &
+
+#---------------------------------------------------
 ## Gestor de ventanas
 exec i3
+#exec startkde

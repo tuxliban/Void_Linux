@@ -55,11 +55,12 @@ font-3 = Weather Icons:size=12;1
 
 modules-left = i3
 modules-center = popup-calendar
-modules-right = mpd updates-void
+modules-right = mpd volume
 
 tray-position = right
 tray-padding = 2
-tray-transparent = false
+;tray-transparent = false
+tray-transparent = true
 ;tray-background = #0063ff
 
 cursor-click = pointer
@@ -97,7 +98,7 @@ font-3 = Font Awesome 5 Brands Regular:ppixelsize=8;1
 
 modules-left = xwindow
 ;modules-center = 
-modules-right = xkeyboard cpu temperature volume info-trash eth wlan
+modules-right = backlight filesystem xkeyboard cpu temperature info-trash eth wlan battery
 
 ########## Módulos ##########
 
@@ -111,8 +112,8 @@ format = <label>
 format-background = #f00
 format-foreground = #000
 format-padding = 1
-format-prefix = " "
-
+;format-prefix = " "
+format-prefix = " "
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -150,7 +151,7 @@ label-indicator-background = ${colors.secondary}
 ;   %used%
 
 type = internal/fs
-interval = 30
+interval = 600
 fixed-values= true
 format-mounted = <label-mounted>
 
@@ -158,7 +159,7 @@ format-mounted = <label-mounted>
 mount-0 = /
 mount-1 = /home
 
-label-mounted = %{F#FBEC42}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#FBEC42}%mountpoint%%{F-}: %percentage_free%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -281,11 +282,33 @@ bar-progress-empty-foreground = ${colors.foreground-alt}
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 5
 format-prefix = "%{F#de0000}  "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
-label = %percentage-cores%
+
+Additional formatting
+; Available tags:
+;   <label> (default)
+;   <bar-load>
+;   <ramp-load>
+;   <ramp-coreload>
+format = <label> <ramp-coreload>
+
+; Available tokens:
+;   %percentage% (default) - total cpu load
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label = %percentage%%
+
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
 
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/memory]
@@ -299,8 +322,8 @@ label = %percentage_used%%
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/wlan]
 type = internal/network
-interface = wlp5s0
-interval = 5
+interface = wlo1
+interval = 30
 
 format-connected = %{F#00a2de}<label-connected>
 ;format-connected-underline = #9945FF
@@ -313,8 +336,8 @@ label-disconnected =  s/conexión
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/eth]
 type = internal/network
-interface = enp7s8
-interval = 3.0
+interface = eno1
+interval = 30
 
 ;format-connected-underline = #55aa55
 format-connected-prefix = "%{F#00a2de} "
@@ -347,19 +370,20 @@ label = %{F#00FFDE} %date% %{F#FFFFFF} %time%
 
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/volume]
-;type = internal/volume
 type = internal/alsa
 format-volume =%{F#9933FF}<ramp-volume> <label-volume>
+label-volume = %percentage%%
 format-muted = 0% 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 =  
+ramp-volume-1 =  
+ramp-volume-2 =  
 
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 55
+interval = 30
 
 format =<ramp> <label>
 ;format-underline = #f50a4d
@@ -371,9 +395,9 @@ label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
+ramp-1 = %{F#00ff0a}
+ramp-2 = %{F#faff00}
+ramp-3 = %{F#ff0000}
 ramp-foreground = ${colors.foreground-alt}
 
 ;-------------------------------------------------------------------------------------------------------------------------
@@ -402,8 +426,135 @@ format-prefix = "%{F#ff8a00} "
 [module/popup-calendar]
 type = custom/script
 exec = ~/.config/polybar/scripts/popup-calendar.sh
-interval = 1
+interval = 60
 click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup
 format-underline = #0a6cf5
 
 ;-------------------------------------------------------------------------------------------------------------------------
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+;full-at = 100
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = ACAD
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging> <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <ramp-capacity> <label-full>
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = Cargando %time%
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-full = %{F#0dff00} %percentage%%
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = %{F#ff000f}
+ramp-capacity-1 = %{F#c4ff00}
+ramp-capacity-2 = %{F#000aff}
+ramp-capacity-3 = %{F#00ffe8}
+ramp-capacity-4 = %{F#00ff0a}
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
+;----------------------------------------------------------
+
+[module/backlight]
+type = internal/xbacklight
+
+; XRandR output to get get values from
+; Default: the monitor defined for the running bar
+#output = HDMI-1
+output = eDP1
+
+; Create scroll handlers used to set the backlight value
+; Default: true
+enable-scroll = false
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
+format-prefix = " "
+format = <label>
+
+; Available tokens:
+;   %percentage% (default)
+label = %percentage%%
+
+; Only applies if <ramp> is used
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─

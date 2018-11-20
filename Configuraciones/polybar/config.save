@@ -1,0 +1,498 @@
+;=====================================================
+;
+p
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+########## Colores ##########
+
+[colors]
+; Fondo
+background = #00000000
+background-alt = #444
+; Primer plano
+foreground = #ffffff
+foreground-alt = #555
+bg_trans = #dd000000
+primary = #ffb52a
+secondary = #181D9A
+alert = #ff0600
+
+########## Barra ##########
+
+[bar/top]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 15
+;offset-x = 1%
+;offset-y = 1%
+radius = 3
+fixed-center = true
+bottom = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 1
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = monospace:pixelsize=8;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = Font Awesome 5 Free Solid:pixelsize=8;1
+font-3 = Weather Icons:size=12;1
+
+modules-left = i3
+modules-center = popup-calendar
+modules-right = mpd battery
+
+tray-position = right
+tray-padding = 2
+tray-transparent = false
+;tray-background = #0063ff
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/bottom]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 13
+;offset-x = 1%
+;offset-y = 1%
+radius = 3
+fixed-center = true
+bottom = true
+
+background = ${colors.bg_trans}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = monospace:pixelsize=8;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = Font Awesome 5 Free Solid:pixelsize=8;1
+font-3 = Font Awesome 5 Brands Regular:ppixelsize=8;1
+
+modules-left = xwindow
+;modules-center = 
+modules-right = ;filesystem xkeyboard cpu temperature volume info-trash eth wlan
+
+########## Módulos ##########
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+; Available tags:
+;   <label> (default)
+format = <label>
+format-background = #f00
+format-foreground = #000
+format-padding = 1
+format-prefix = " "
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/xkeyboard]
+type = internal/xkeyboard
+;blacklist-0 = num lock
+
+format-prefix = "%{F#33ff33}  "
+format-prefix-foreground = ${colors.foreground-alt}
+;format-prefix-underline = ${colors.secondary}
+
+label-layout = %{F#33ff33}%layout%
+;label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 1
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+;label-indicator-underline = ${colors.secondary}
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/filesystem]
+
+# Etiquetas disponibles:
+;   <label-mounted> (default)
+;   <bar-free>
+;   <bar-used>
+;   <ramp-capacity>
+
+# Available tokens:
+;   %mountpoint%
+;   %type%
+;   %fsname%
+;   %percentage_free%
+;   %percentage_used%
+;   %total%
+;   %free%
+;   %used%
+
+type = internal/fs
+interval = 30
+fixed-values= true
+format-mounted = <label-mounted>
+
+; Puntos de montaje
+mount-0 = /
+mount-1 = /home
+
+label-mounted = %{F#FBEC42}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+; Available tags:
+;   <label-unmounted> (default)
+format-unmounted = <label-unmounted>
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+strip-wsnumbers = true  ;This will split the workspace name on ':'
+ws-icon-0 = 1;
+ws-icon-1 = 2; 
+ws-icon-2 = 3; 
+ws-icon-3 = 4; 
+ws-icon-4 = 5; 
+ws-icon-5 = 6; 
+ws-icon-6 = 7; 
+ws-icon-default = ♟
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 1
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+;focused = Active workspace on focused monitor
+label-focused = %name%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %name%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %name%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/mpd]
+type = internal/mpd
+format-online = <label-song> %{F#e77869}<label-time> <bar-progress> <icon-next> <icon-play> <icon-stop> <icon-pause> <icon-prev> <icon-random>
+format-playing = ${self.format-online}
+format-offline = <label-offline>
+
+icon-play = 
+icon-play-foreground = #aaff77
+icon-pause = %{F#edf917}
+icon-stop = %{F#ff0000}
+icon-prev = %{F#ffffff}
+icon-next = %{F#ffffff}
+icon-seekb = 
+icon-seekf = 
+icon-random = 
+;icon-repeat = 
+;icon-repeatone = 
+
+icon-prev-font = 1
+icon-stop-font = 1
+label-offline = mpd offline
+#label-song = %{F#6a83ee}%title%
+label-song = %{F#6a83ee}%artist% - %title%
+label-song-maxlen = 40
+label-song-ellipsis = true
+
+toggle-on-foreground = #ff
+toggle-off-foreground = #55
+
+bar-progress-width = 25
+bar-progress-foreground-0 = #00ff8c
+bar-progress-foreground-1 = #42ff00
+bar-progress-foreground-2 = #c4ff00
+bar-progress-foreground-3 = #ddcf00
+bar-progress-foreground-4 = #ff4d00
+bar-progress-foreground-5 = #ff0000
+bar-progress-gradient = true
+bar-progress-indicator = >
+bar-progress-indicator-font = 0
+bar-progress-font = 1
+bar-progress-indicator-foreground = #ff
+bar-progress-fill = =
+bar-progress-fill-font = 1
+bar-progress-empty = -
+bar-progress-empty-font = 1
+bar-progress-empty-foreground = ${colors.foreground-alt}
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "%{F#de0000}  "
+format-prefix-foreground = ${colors.foreground-alt}
+;format-underline = #f90000
+label = %percentage-cores%
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+;format-underline = #4bffdc
+label = %percentage_used%%
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/wlan]
+type = internal/network
+interface = wlp5s0
+interval = 5
+
+format-connected = %{F#00a2de}<label-connected>
+;format-connected-underline = #9945FF
+label-connected =  %essid%
+format-disconnected = %{F#de0000}<label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected =  s/conexión
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/eth]
+type = internal/network
+interface = enp7s8
+interval = 3.0
+
+;format-connected-underline = #55aa55
+format-connected-prefix = "%{F#00a2de} "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %linkspeed%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/date]
+type = internal/date
+interval = 1
+
+date = "%a %b,%d"
+date-alt = " %Y-%m-%d"
+
+time = %H:%M:%S
+time-alt = %H:%M
+
+;format-prefix = 
+;format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+#label = %{F#00FFDE} %date% %{F#FFFFFF} %time%
+label = %{F#00FFDE} %date% %{F#FFFFFF} %time%
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/volume]
+type = internal/volume
+format-volume =%{F#9933FF}<ramp-volume> <label-volume>
+format-muted = 0% 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 55
+
+format =<ramp> <label>
+;format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+;format-warn-underline = ${self.format-underline}----
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-foreground = ${colors.foreground-alt}
+
+;-------------------------------------------------------------------------------------------------------------------------
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/info-trash]
+type = custom/script
+exec = ~/.config/polybar/scripts/info-trash.sh
+interval = 60
+click-left = ~/.config/polybar/scripts/info-trash.sh --clean
+format-prefix = " "
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/updates-void]
+type = custom/script
+exec = ~/.config/polybar/scripts/updates-void.sh
+interval = 600
+format-prefix = "%{F#ff8a00} "
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/popup-calendar]
+type = custom/script
+exec = ~/.config/polybar/scripts/popup-calendar.sh
+interval = 5
+click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup
+format-underline = #0a6cf5
+
+;-------------------------------------------------------------------------------------------------------------------------
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = ADP1
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging> <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <ramp-capacity> <label-full>
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = Charging %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = Discharging %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-full = Fully charged
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
