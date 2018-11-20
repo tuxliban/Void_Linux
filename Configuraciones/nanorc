@@ -1,0 +1,4 @@
+set linenumbers
+set boldtext
+include "/usr/share/nano/*.nanorc"
+#include "/home/skynet/.nanorc/*.nanorc"
