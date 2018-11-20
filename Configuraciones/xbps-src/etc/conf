@@ -1,0 +1,14 @@
+
+#XBPS_INSTALL_ARGS="--repository=https://repo.voidlinux.eu/current/aarch64"
+XBPS_CFLAGS="-march=native -Os -pipe"
+XBPS_CXXFLAGS="${XBPS_CFLAGS}"
+XBPS_ALLOW_RESTRICTED=yes
+XBPS_CCACHE=yes
+CCACHE_DIR="/home/skynet/Respaldos/Git_Hub/void-packages/hostdir/ccache" ccache -s
+XBPS_MAKEJOBS=5
+XBPS_CHROOT_CMD=uchroot
+CHROOT_READY=yes
+#DESTDIR="/tmp/RAM/"
+#DESTDIR="/var/tmp/notmpfs"
+#PKGDESTDIR="$DESTDIR/"
+#XBPS_BUILDDIR="/var/tmp/notmpfs"
