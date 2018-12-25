@@ -1,0 +1,50 @@
+rename Trabajo_14.docx
+rename Trabajo_1.dotx
+rename Tarea12.docx
+rename Tarea14.docx
+rename Actividad_02.xlsx
+rename Actividad02.odt
+rename A4_JAL.odt
+rename A3_RBSM.doc
+rename A3_RBSM.xlsx
+rename A3_RBSM.pdf
+search RBSM
+rename x86_64-dotconfig.bak1
+rename custom_void.bak
+rename custom_void}
+rename x86_64-dotconfig
+shell aunpack li
+rename patch-4.14.81un.xz
+shell aunpack patch-4.14.81.xz
+shell aunpack patch-4.14.80-81.xz
+rename es_MX.oxt1
+rename README.md
+open_with micro
+open_with 
+rename Actividad3_CuadroComparativo.docx
+mkdir Actividad_9
+rename GPAP_Actividad-3.docx
+mkdir Universidad UAL
+mkdir Admon. calidad
+mkdir Formulación y evaluación de proyectos
+open_with nano
+search linux4.14
+rename El_Planeta_de_los_Simios_Confrontación.mp4
+rename El Planeta de los Simios. La Guerra.mp4
+rename IMplementacion de Kaisen en Mexico.pdf
+rename Sistema Kaizen en la administración.pdf
+rename La Monja.mp4
+rename GPAP_Actividad-5.docx
+rename FreeBSD-12.0-STABLE-i386-20181213-memstick.img
+rename 1 пабликk
+rename 12 Años de Esclavitud.mp4
+open_with leafpad
+rename custom-kernel
+rename KINGSTON 4G
+mkdir Custom
+search guia
+shell unrar x COR12+crk.rar
+shell rar -x COR12+crk.rar
+mkdir Corel_Draw_12
+delete
+rename Papás.png

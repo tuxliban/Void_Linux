@@ -1,1 +1,0 @@
-/home/skynet/Datos/Configuraciones/script.sh
