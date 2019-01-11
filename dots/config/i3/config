@@ -67,6 +67,8 @@ for_window [class="Galculator"] floating enable border pixel 1
 ## Ventanas flotantes
 for_window [title="Abrir archivo"] resize set 600 400, move position center
 for_window [title="Guardar archivo"] resize set 600 400, move position center
+for_window [title="Elegir archivos"] resize set 600 400, move position center
+for_window [title="Elegir una imagen"] resize set 600 400, move position center
 
 #::::::::::::::::: Control de volumen :::::::::::::::#
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
