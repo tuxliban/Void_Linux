@@ -51,9 +51,6 @@ setxkbmap -layout latam &
 ## Usar acentos en teclado US
 #setxkbmap us -variant intl
 
-## Español España
-#setxkbmap -layout es &
-
 #----------------------------------------------------
 
 ## Activar teclado numérico
@@ -63,11 +60,6 @@ numlockx &
 
 ## Auto montaje de dispositivos
 devmon --exec-on-drive "notify-send -t 7000 --icon=/home/skynet/.icons/mount.png --urgency=low \"Dispositivo %l listo para usar\"" &
-
-#----------------------------------------------------
-
-## Bloqueo de pantalla
-#xautolock -time 10 -locker lock
 
 #----------------------------------------------------
 
