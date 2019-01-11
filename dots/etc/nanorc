@@ -1,5 +1,26 @@
+## Mostrar número de línea a la izquierda del texto
 set linenumbers
+
+## Use bold text instead of reverse video text.
 set boldtext
+
+## Setup of syntax coloring.
 include "/usr/share/nano/*.nanorc"
-#include "/home/skynet/.nanorc/*.nanorc"
-set errorcolor red
+
+## Paint the interface elements of nano.  These are examples;
+## by default there are no colors, except for errorcolor.
+ set titlecolor brightwhite,blue
+ set statuscolor brightwhite,green
+ set errorcolor brightwhite,red
+ set selectedcolor brightwhite,magenta
+ set numbercolor cyan
+ set keycolor cyan
+ set functioncolor green
+## In root's .nanorc you might want to use:
+ set titlecolor brightwhite,magenta
+# set statuscolor brightwhite,magenta
+# set errorcolor brightwhite,red
+# set selectedcolor brightwhite,cyan
+# set numbercolor magenta
+# set keycolor brightmagenta
+# set functioncolor magenta
