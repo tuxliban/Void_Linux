@@ -54,21 +54,40 @@ Font: DejaVu Serif
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-################################################################
+###################################################################
 
 ## Control de ventanas
-#for_window [class="URxvt"] floating enable
-for_window [class="URxvt"] border 1pixel
-for_window [class="feh"] border 1pixel
+## Ventanas sin título y sin bordes
+for_window [class="^.*"] border none
 
-## Ventanas flotantes sin bordes
-for_window [class="Galculator"] floating enable border pixel 1
+#:::::::::::::::::::: Ventanas flotantes :::::::::::::::::::::::::#
 
-## Dimensiones mínimas para ventanas flotantes
-floating_minimum_size 80 x 55
+# Todas las ventanas flotantes al centro
+for_window [class="^.*"] move position center #Por alguna extraña razón no logro hacer que funcione, con unas configuraciones. Por esa razón es que se vuelve redundante con algunas de las siguientes configuraciones
 
-## Dimensiones máximas para ventanas flotantes
-floating_maximum_size 800 x 600
+# Ventanas sin bordes
+for_window [class="Galculator"] floating enable
+for_window [class="Yad" title="yad-calendar"] floating enable
+
+# Telegram
+for_window [title="Guardar imagen"] resize set 600 400, move position center
+
+# Waterfox
+for_window [title="Guardar como"] resize set 600 400, move position center
+for_window [title="Cargar archivo"] resize set 600 400, move position center
+
+# Chromium
+for_window [title="Abrir archivo"] resize set 600 400, move position center
+for_window [title="Guardar archivo"] resize set 600 400, move position center
+
+# Libreoffice
+for_window [title="Abrir"] resize set 600 400, move position center
+for_window [title="Guardar como"] resize set 600 400, move position center
+for_window [title="Exportar"] resize set 600 400, move position center
+
+# Meld (comparar textos)
+for_window [title="Seleccionar el primer archivo"] resize set 600 400, move position center
+
 
 #::::::::::::::::: Control de volumen :::::::::::::::#
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
@@ -190,16 +209,17 @@ bindsym $mod+Shift+0 move container to workspace $WS0
 ################################################################
 assign [class="ranger"] 	$ws1
 assign [class="chromium"]	$ws2
-assign [class="qutebrowser"]	$ws2
+assign [class="waterfox"]	$ws2
 assign [class="telegram"] 	$ws3
-assign [class="leafpad"] 	$ws4
+assign [class="leafpad"] 	$ws6
 assign [class="mplayer"] 	$ws5
+assign [class="mixxx"]		$ws5
 assign [class="mupdf"]		$ws4
 #assign [class="libreoffice"]   $ws4
 assign [class="Gimp"]		$ws6
 assign [class="wesnoth"]	$ws0
 assign [class="openshot-qt"]    $ws0
-assign [class="zsnes"]		$ws0
+assign [class="snes9z-gtk"]	$ws0
 ################################################################
 #:::::: Programas que se inician en espacios de trabajo :::::::#
 ################################################################
@@ -216,8 +236,10 @@ exec --no-startup-id i3-msg 'workspace 1:; exec urxvt -e ranger'
 bindsym $mod+F1 workspace $wS1; exec urxvt -e ranger
 
 ## Navegadores web
-# Chromium
+# Waterfox
 bindsym $mod+F2 workspace $WS2; exec chromium
+# Chromium
+bindsym $mod+Shift+F2 workspace $WS2; exec waterfox
 
 ## Telegram
 bindsym $mod+F3 workspace $WS3; exec /usr/bin/Telegram
@@ -228,14 +250,25 @@ bindsym $mod+F5 workspace $WS5; exec urxvt -e 'ncmpcpp'
 ## Editor de imágenes Gimp
 bindsym $mod+Shift+F9 workspace $WS6; exec gimp
 
-#::::::::::::::: Captura de pantalla :::::::::::::::#
-bindsym Print --release exec "scrot -q 100 '%Y-%m-%d-%H:%M:%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/screenshot.png 'Captura de pantalla' 'guardada en: ~/Datos/Capturas'"
+## Mezclador de música (alternativa libre VirtualDJ)
+bindsym $mod+F10 workspace $WS5; exec mixxx
+
+#::::::::::::::: Captura de pantalla en portapapel :::::::::::::::#
+# Para que funcione esta opción, es necesario tener instalado xclip
+# Pantalla completa
+bindsym Print --release exec "scrot /tmp/'%F_%T.png' -e 'xclip -selection c -t image/png < $f'"
+
+# Área seleccionada
+bindsym Shift+Print --release exec "scrot -s /tmp/'select-%F_%T.png' -e 'xclip -selection c -t image/png < $f'"
+
+#::::::::::::::: Guardar captura de pantalla :::::::::::::::#
+bindsym $mod+Print --release exec "scrot -q 100 '%F_%H%M%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/screenshot.png 'Captura de pantalla' 'guardada en: ~/Datos/Capturas'"
 
 #::::::::::::::: Captura de pantalla área seleccionada :::::::::::::::#
-bindsym $mod+Print --release exec "scrot -s -q 100 '%Y-%m-%d-%H:%M:%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/select'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/workspace.png 'Área seleccionda' 'guardada en: ~/Datos/Capturas/select'"
+bindsym $mod+Shift+Print --release exec "scrot -s -q 100 'Select_%F_%H%M%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/select'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/workspace.png 'Área seleccionda' 'guardada en: ~/Datos/Capturas/select'"
 
-#::::::::::::::: Captura de pantalla ventana enfocada :::::::::::::::#
-bindsym $mod+Shift+Print --release exec "scrot -u -q 100 '%Y-%m-%d-%H:%M:%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/focus'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/window.png 'Ventana enfocada' 'guardada en: ~/Datos/Capturas/focus'"
+#::::::::::::::: Guardar pantalla de ventana enfocada :::::::::::::::#
+bindsym Ctrl+Print --release exec "scrot -u -q 100 'Focus_%F_%H%M%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/focus'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/window.png 'Ventana enfocada' 'guardada en: ~/Datos/Capturas/focus'"
 
 ###############################################################################
 
@@ -336,7 +369,7 @@ bindsym $mod+x mode "$mode_system"
 ########## Aplicaciones de autoinicio ##########
 
 ## Dropbox
-exec --no-startup-id ~/.dropbox-dist/dropboxd
+exec --no-startup-id sleep 5s;  ~/.dropbox-dist/dropboxd
 
 ## Iniciar polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
