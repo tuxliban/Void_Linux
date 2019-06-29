@@ -64,17 +64,17 @@ for_window [class="feh"] border 1pixel
 ## Ventanas flotantes sin bordes
 for_window [class="Galculator"] floating enable border pixel 1
 
-## Ventanas flotantes
-for_window [title="Abrir archivo"] resize set 600 400, move position center
-for_window [title="Guardar archivo"] resize set 600 400, move position center
-for_window [title="Elegir archivos"] resize set 600 400, move position center
-for_window [title="Elegir una imagen"] resize set 600 400, move position center
+## Dimensiones mínimas para ventanas flotantes
+floating_minimum_size 80 x 55
+
+## Dimensiones máximas para ventanas flotantes
+floating_maximum_size 800 x 600
 
 #::::::::::::::::: Control de volumen :::::::::::::::#
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
-# 
+#
 
 #media next and prev
 bindsym Shift+Control+j exec ncmpcpp next
@@ -83,7 +83,10 @@ bindsym Shift+Control+space exec ncmpcpp toggle
 # 
 
 #:::::::::::::: Control de brillo ::::::::::::#
+## Incrementos de brillo en -2
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2
+
+## Decrementos de brillo en +2
 bindsym XF86MonBrightnessDown exec xbacklight -dec 2
 
 ################################################################
@@ -127,7 +130,7 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+## Alternar ventana flotante/mosaico
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
@@ -271,6 +274,7 @@ bindsym $mod+r mode "resize"
 
 #:::::::::::::::::::::: Configuración del panel ::::::::::::::::::::::#
 ####################################################################### 
+## Esta confifuración funciona únicamente si se utiliza i3blocks
 
 #bar {
 ##	status_command		i3status
@@ -330,9 +334,6 @@ mode "$mode_system" {
 bindsym $mod+x mode "$mode_system"
 
 ########## Aplicaciones de autoinicio ##########
-
-## Automontaje de dispositivos
-#exec --no-startup-id udiskie -a -s
 
 ## Dropbox
 exec --no-startup-id ~/.dropbox-dist/dropboxd
