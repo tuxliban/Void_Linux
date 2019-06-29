@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+alias ls='ls -lhX --color=auto'
 alias grep='grep --color=auto'
 #PS1='[\u@\h \W]\$ '
 
@@ -33,6 +33,7 @@ man() {
 }
 
 export EDITOR="nano"
+#export EDITOR="leafpad"
 
 export PATH="/usr/lib/ccache/bin/:$PATH"
 
@@ -42,7 +43,7 @@ exec startx
 fi
 
 # Múltiples consolas
-tmux
+#tmux
 
 ##---------- Alias personalizados -------------##
 
@@ -55,18 +56,18 @@ alias layes='setxkbmap -layout es'
 # Desactivar teclado interno
 #alias keyoff='xinput set-int-prop 11 "Device Enabled" 8 0'
 
-# Activar teclado
+# Activar teclado interno
 #alias keyon='xinput set-int-prop 12 "Device Enabled" 8 1'
 
 # Navegadores web modo texto
-alias google='links -g www.google.com.mx'
-alias gg='w3m www.google.com'
+#alias google='links -g www.google.com.mx'
+#alias gg='w3m www.google.com'
 
 # Eliminar paquetes huerfanos
 alias limpiar='sudo xbps-remove -ROov'
 
 # Enviar archivos a papelera
-#alias rm='mv --target-directory ~/.local/share/Trash/files'
+alias rm='mv --target-directory ~/.local/share/Trash/files'
 
 # Mostrar tamaño directorios
 alias how='du -bsh'
@@ -89,11 +90,11 @@ alias unhold='sudo xbps-pkgdb -m unhold'
 # Buscar paquetes
 alias buscar='xbps-query -Rs'
 
-# Copiar archivos con informacion de transferencia
-alias cp='rsync -Pr'
+# Copiar archivos y directorios con informacion de transferencia
+alias cp='rsync -rh --progress'
 
 # Borrar solicitando confirmación
-alias rm='rm -Irvd'
+#alias rm='rm -Irvd'
 
 # Sincronización de directorios
 alias Sync='rsync -Prtvu --delete'
@@ -105,26 +106,30 @@ alias dropbox='cd ~/.dropbox-dist && ./dropboxd &'
 alias Find='find . -name'
 
 # Chroot Archlinux
-alias arch='cd /mnt && sudo /mnt/arch/bin/arch-chroot /mnt/arch && su skynet'
+#alias arch='cd /mnt && sudo /mnt/arch/bin/arch-chroot /mnt/arch && su skynet'
 
 ## Mostrar procesos zombies
 alias zombie='ps -el | grep 'Z''
 
-## Conexión wifi
+## Reiniciar serviciod de conexión wifi
 alias wifi='sudo sv restart NetworkManager'
 
 ## Grabar video
 alias gvideo='ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 video.mp4'
-#alias gvideo='
 
-#  Maximo nivel de compresion de archivos
+## Maximo nivel de compresion de archivos
 alias 7z='7z -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on'
 
-# Comparar cambios en archivos
+## Comparar cambios en archivos
 alias diff='diff -y --color=auto'
-
-## Actualizar lista de publicidad bloqueada
-alias up-host='sudo cp /etc/hosts /etc/hosts.bak; sudo wget -O /etc/hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts'
 
 ## Mostrar número de paquetes disponibles para actualizar
 # xbps-install -Mun | wc -l
+
+alias pg='ping -c 2 8.8.8.8'
+
+# Descargar audio youtube
+alias yt='youtube-dl -x --audio-format mp3'
+
+DEVICE=$(iw dev | grep Interface | cut -d " " -f2)
+alias potencia='sudo iw dev $DEVICE scan | egrep "SSID|signal|\(on"'
