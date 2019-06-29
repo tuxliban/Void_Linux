@@ -3,74 +3,76 @@
 URxvt.buffered:			true
 
 ! Color de fondo
-URxvt.background:		black
+URxvt.background:			black
 
 ! Color de frente
-URxvt.foreground:		white
+URxvt.foreground:			white
 
 ! Color del cursor
-URxvt.cursorColor:		green
+URxvt.cursorColor:			green
 
 ! Tipo de fuente
-URxvt.font:			xft:liberationmono:pixelsize=12:antialias=true:hinting=full
+URxvt.font:				xft:liberationmono:pixelsize=12:antialias=true:hinting=full
 URxvt.boldFont:			xft:liberationmono:bold:pixelsize=12:antialias=true:hinting=full
 
 ! Eliminar barra de scroll
-URxvt.scrollBar:		false
+URxvt.scrollBar:			false
 
 URxvt.mouseWheelScrollPage:	false
 
 ! Parpadeo de cursor
-URxvt.cursorBlink:		true
+URxvt.cursorBlink:				true
 
 ! Puntero
-URxvt.pointerBlack:		true
-URxvt.pointerBlackDelay:	3
+URxvt.pointerBlack:			true
+URxvt.pointerBlackDelay:		3
 
 ! Nombre personalizado para la ventana
-URxvt.title:			Void
+URxvt.title:					Enter the Void
 
 ! Soporte para pestañas
 !URxvt.perl-ext-common:		default,tabbed
 
 !! Bordes del emulador de consola
 ! Pixeles para borde exterior
-URxvt*externalBorder:		0
+URxvt*externalBorder:			0
 ! Pixeles para borde interior
-URxvt.internalBorder:		0
+URxvt.internalBorder:			0
 ! Remover borde
-URxvt.borderless:		false
+URxvt.borderless:			false
 
 ! Transparencias
-URxvt.transparent:		true
+URxvt.transparent:			true
 URxvt.shading:			20
-URxvt.fading:			40
-URxvt.blendType:		alphablend
+URxvt.fading:				40
+URxvt.blendType:			alphablend
+
+! Ocultar barra de pestañas cuando sólo existe activa una
+URxvt.tabbed.autohide: true
 
 ! Atajos copiar y pegar
 !------------------------------------------------
-URxvt.keysym.M-c:	perl:clipboard:copy
-URxvt.keysym.M-v:	perl:clipboard:paste
-URxvt.keysym.Mod4-c:	perl:clipboard:copy
-URxvt.keysym.Mod4-v:	perl:clipboard:paste
-URxvt.keysym.Mod4-C-v:	perl:clipboard:paste_escaped
-URxvt.keysym.M-C-v:	perl:clipboard:paste_escaped
-URxvt.keysym.M-Escape:	perl:keyboard-select:activate
-URxvt.keysym.C-Escape:	perl:keyboard-select:activate
+URxvt.clipboard.autocopy:		true
+URxvt.keysym.M-c:			perl:clipboard:copy
+URxvt.keysym.M-v:			perl:clipboard:paste
+URxvt.keysym.M-C-v:			perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape:		perl:keyboard-select:activate
+URvt.copyCommand:			xclip -o -selection clipboard
+URxvt.pasteCommand:			xclip -o -selection clipboard
 
 ! Otras configuraciones
 !--------------------------------------
 ! Pestañas
 URxvt.perl-ext-common:		default,clipboard,url-select,keyboard-select,tabbed
-Urxvt.tabbed.tabbar-fg:		8
+Urxvt.tabbed.tabbar-fg:			8
 URxvt.tabbed.tabbar-bg:		0
-URxvt.tabbed.tab-fg:		3
-URxvt.tabbed-tab-bg:		0
+URxvt.tabbed.tab-fg:			3
+URxvt.tabbed-tab-bg:			0
 
 ! Abrir URL
-URxvt.perl-ext:			default,matcher
-URxvt.urllauncher:		w3m
-!URxvt.url-select.underline:	true
-!URxvt.keysym.M-u:		perl:url-select:select_next
+URxvt.perl-ext:				default,matcher
+URxvt.urllauncher:				w3m
+!URxvt.url-select.underline:		true
+!URxvt.keysym.M-u:			perl:url-select:select_next
 !URxvt.keysym.M-Escape:		perl:keyboard-select:activate
-!URxvt.keysym.M-s:		perl:keyboard-select:search
+!URxvt.keysym.M-s:			perl:keyboard-select:search
