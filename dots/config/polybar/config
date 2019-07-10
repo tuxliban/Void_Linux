@@ -51,17 +51,14 @@ module-margin-right = 1
 font-0 = monospace:pixelsize=8;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Font Awesome 5 Free Solid:pixelsize=8;1
-font-3 = Weather Icons:size=12;1
 
 modules-left = i3
 modules-center = popup-calendar
-modules-right = mpd volume
+modules-right = mpd pulseaudio updates-void
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = false
 tray-transparent = true
-;tray-background = #0063ff
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -96,9 +93,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Font Awesome 5 Free Solid:pixelsize=8;1
 font-3 = Font Awesome 5 Brands Regular:ppixelsize=8;1
 
-modules-left = xwindow
+modules-left = xwindow 
 ;modules-center = 
-modules-right = backlight filesystem xkeyboard cpu temperature info-trash eth wlan battery
+modules-right = backlight filesystem keyboard cpu temperature info-trash eth wlan battery
 
 ########## Módulos ##########
 
@@ -112,12 +109,12 @@ format = <label>
 format-background = #f00
 format-foreground = #000
 format-padding = 1
-;format-prefix = " "
 format-prefix = " "
 ;-------------------------------------------------------------------------------------------------------------------------
-[module/xkeyboard]
+
+[module/keyboard]
 type = internal/xkeyboard
-;blacklist-0 = num lock
+;blacklist-0 = numlock
 
 format-prefix = "%{F#33ff33}  "
 format-prefix-foreground = ${colors.foreground-alt}
@@ -322,6 +319,7 @@ label = %percentage_used%%
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/wlan]
 type = internal/network
+;Tarjeta integrada
 interface = wlo1
 interval = 30
 
@@ -369,14 +367,61 @@ format-underline = #0a6cf5
 label = %{F#00FFDE} %date% %{F#FFFFFF} %time%
 
 ;-------------------------------------------------------------------------------------------------------------------------
-[module/volume]
-type = internal/alsa
-format-volume =%{F#9933FF}<ramp-volume> <label-volume>
-label-volume = %percentage%%
-format-muted = 0% 
+## ALSA
+;[module/volume]
+;type = internal/alsa
+;format-volume =%{F#9933FF}<ramp-volume> <label-volume>
+;label-volume = %percentage%%
+;format-muted = 0% 
+;ramp-volume-0 =  
+;ramp-volume-1 =  
+;ramp-volume-2 =  
+
+## PULSEAUDIO
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+;sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 2
+
+Additional formatting
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = %{F#9933FF}<ramp-volume> <label-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-muted =  0%
+
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
 ramp-volume-0 =  
 ramp-volume-1 =  
-ramp-volume-2 =  
+ramp-volume-2 = 
+
+
 
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/temperature]
@@ -419,7 +464,7 @@ format-prefix = " "
 [module/updates-void]
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-void.sh
-interval = 600
+interval = 3600
 format-prefix = "%{F#ff8a00} "
 
 ;-------------------------------------------------------------------------------------------------------------------------
@@ -435,8 +480,8 @@ format-underline = #0a6cf5
 type = internal/battery
 
 ; This is useful in case the battery never reports 100% charge
-full-at = 99
-;full-at = 100
+## Carga máxima expresada en porcentaje
+full-at = 98
 
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/
@@ -558,3 +603,4 @@ bar-width = 10
 bar-indicator = |
 bar-fill = ─
 bar-empty = ─
+
