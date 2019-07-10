@@ -63,7 +63,7 @@ for_window [class="^.*"] border none
 #:::::::::::::::::::: Ventanas flotantes :::::::::::::::::::::::::#
 
 # Todas las ventanas flotantes al centro
-for_window [class="^.*"] move position center #Por alguna extraña razón no logro hacer que funcione, con unas configuraciones. Por esa razón es que se vuelve redundante con algunas de las siguientes configuraciones
+for_window [class="^.*"] move position center # Por alguna extraña razón no logro hacer que funcione con unas configuraciones, por esa razón es que se vuelve redundante con las siguientes configuraciones
 
 # Ventanas sin bordes
 for_window [class="Galculator"] floating enable
@@ -236,9 +236,9 @@ exec --no-startup-id i3-msg 'workspace 1:; exec urxvt -e ranger'
 bindsym $mod+F1 workspace $wS1; exec urxvt -e ranger
 
 ## Navegadores web
-# Waterfox
-bindsym $mod+F2 workspace $WS2; exec chromium
 # Chromium
+bindsym $mod+F2 workspace $WS2; exec chromium
+# Waterfox
 bindsym $mod+Shift+F2 workspace $WS2; exec waterfox
 
 ## Telegram
@@ -261,13 +261,13 @@ bindsym Print --release exec "scrot /tmp/'%F_%T.png' -e 'xclip -selection c -t i
 # Área seleccionada
 bindsym Shift+Print --release exec "scrot -s /tmp/'select-%F_%T.png' -e 'xclip -selection c -t image/png < $f'"
 
-#::::::::::::::: Guardar captura de pantalla :::::::::::::::#
+#::::::::::::::: Guardar captura de pantalla completa :::::::::::::::#
 bindsym $mod+Print --release exec "scrot -q 100 '%F_%H%M%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/screenshot.png 'Captura de pantalla' 'guardada en: ~/Datos/Capturas'"
 
-#::::::::::::::: Captura de pantalla área seleccionada :::::::::::::::#
+#::::::::::::::: Guardar captura de pantalla del área seleccionada :::::::::::::::#
 bindsym $mod+Shift+Print --release exec "scrot -s -q 100 'Select_%F_%H%M%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/select'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/workspace.png 'Área seleccionda' 'guardada en: ~/Datos/Capturas/select'"
 
-#::::::::::::::: Guardar pantalla de ventana enfocada :::::::::::::::#
+#::::::::::::::: Guardar captura de pantalla de la ventana enfocada :::::::::::::::#
 bindsym Ctrl+Print --release exec "scrot -u -q 100 'Focus_%F_%H%M%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/focus'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/window.png 'Ventana enfocada' 'guardada en: ~/Datos/Capturas/focus'"
 
 ###############################################################################
