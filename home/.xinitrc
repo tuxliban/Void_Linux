@@ -33,13 +33,16 @@ fi
 
 #-----------------------------------------------------
 
-## Transparencias
-compton -bc &
+## Compositor de ventanas
+compton -bc --inactive-dim=0.5 &
 
 #-----------------------------------------------------
 
-## Wallpaper aleatorio
-feh --bg-fill --randomize --no-fehbg ~/Wallpaper/* &
+## Wallpaper aleatorio en cada inicio de sesión
+#feh --bg-fill --randomize --no-fehbg ~/Wallpaper/* &
+
+## Wallpaper aleatorio cada 20 minutos
+watch -n 1200 feh --randomize --bg-fill ~/Wallpaper/* &
 
 #-----------------------------------------------------
 
@@ -59,7 +62,7 @@ numlockx &
 #----------------------------------------------------
 
 ## Auto montaje de dispositivos
-devmon --exec-on-drive "notify-send -t 7000 --icon=/home/skynet/.icons/mount.png --urgency=low \"Dispositivo %l listo para usar\"" &
+devmon --exec-on-drive "notify-send -t 9000 --icon=/home/skynet/.icons/mount.png --urgency=low \"Dispositivo %l listo para usar\"" &
 
 #----------------------------------------------------
 
@@ -74,4 +77,3 @@ xbacklight -set 2 &
 #---------------------------------------------------
 ## Gestor de ventanas
 exec i3
-#exec startkde
