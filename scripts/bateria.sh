@@ -8,7 +8,7 @@ estado=$(acpi | awk '{print $3}' | cut -d"," -f1)
 if [ "$porcentaje" -gt 20 ]; then
 	echo ""
 
-# En caso de que el porcentaje de batería sea menor o igual a 20%, mostrar el siguiente mensaje
+# En caso de que el porcentaje de batería sea igual a 20%, mostrar el siguiente mensaje
 elif
 	[ "$porcentaje" -eq 20 ]; then
 	notify-send --urgency=normal "Conectar cargador" "Tiempo de bateria disponible $restante"
