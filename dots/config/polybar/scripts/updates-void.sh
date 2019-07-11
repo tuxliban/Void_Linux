@@ -7,7 +7,7 @@ if ! updates=$(xbps-install -nuM | wc -l); then
 fi
 
 if [ "$updates" -gt 0 ]; then
-	notify-send -i "/home/skynet/.config/polybar/scripts/updates.png" "Actualizaciones disponibles:" "$lista \n ..."
+	notify-send -i "/home/skynet/.config/polybar/scripts/updates.png" "Hay $updates actualizaciones disponibles:" "$lista \n ..."
 	echo "$updates"
 else
 	echo ""
