@@ -1,27 +1,23 @@
-#!/bin/sh
+#!/bin/bash
 
-porcentaje=$(cat /sys/class/power_supply/BAT1/capacity)
+## Script de notificación para la bateria
+
 restante=$(acpi | awk '{print $5}')
 estado=$(acpi | awk '{print $3}' | cut -d"," -f1)
+porcentaje=$(cat /sys/class/power_supply/BAT1/capacity)
 
-# Comprobar si el porcentaje de la bateria es mayor a 20%
-if [ "$porcentaje" -gt 20 ]; then
-	echo ""
+# Si el porcentaje de bateria es menor o igual a 20 y mayor a 15, mostrar el mensaje
+if [ "$porcentaje" -le 20 ] && [ "$porcentaje" -gt 15 ]; then
+	notify-send --urgency=normal -i $HOME/.icons/status/battery_low.png "Conectar el cargador" "Tiempo de bateria disponible $restante" 
+fi
 
-# En caso de que el porcentaje de batería sea igual a 20%, mostrar el siguiente mensaje
-elif
-	[ "$porcentaje" -eq 20 ]; then
-	notify-send --urgency=normal "Conectar cargador" "Tiempo de bateria disponible $restante"
+# Si el porcentaje de bateria es igual o menor a 15, mostrar el mensaje y suspender el equipo
+if [  "$porcentaje" -le 15 ]; then
+	notify-send --urgency=critical -i $HOME/.icons/status/battery_critical.png "Activando modo de ahorro de energia en 30 segundos..."
+	sleep 30 && sudo zzz
+fi
 
-# En caso de que el porcentaje sea menor o igual al 15% y la bateria se está descargando, poner en modo "Suspensión" el equipo
-else
-	if
-#		[ "$porccentaje" -le 15 && 'Discharging' == "$estado" ]; then
-		[ "$porcentaje" -le 15 ]; then
-		notify-send --urgency=critical "Equipo entrará en modo 'Suspender' en 20 segundos..."
-		sleep 20 && sudo zzz
-	else
-		[ "$estado" = 'Charging' ]
-		notify-send --urgency=normal "Cargando bateria..."
-	fi
+# Si ninguna de las condiciones anteriores se cumple, mientras el estado de la bateria sea igual a "Cargando"
+if [ "$porcentaje" -eq '100' ]; then
+	notify-send --urgency=normal -i $HOME/.icons/status/battery_charged.png "Bateria cargada" "Puede desconectar el cargador"
 fi
