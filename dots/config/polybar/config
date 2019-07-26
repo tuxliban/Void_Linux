@@ -54,7 +54,7 @@ font-2 = Font Awesome 5 Free Solid:pixelsize=8;1
 
 modules-left = i3
 modules-center = popup-calendar
-modules-right = mpd pulseaudio updates-void
+modules-right = mpd pulseaudio updates-void bateria
 
 tray-position = right
 tray-padding = 2
@@ -421,14 +421,15 @@ ramp-volume-0 = 
 ramp-volume-1 =  
 ramp-volume-2 = 
 
-
+1
 
 ;-------------------------------------------------------------------------------------------------------------------------
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
-warn-temperature = 55
-interval = 30
+;thermal-zone = 0
+warn-temperature = 85
+interval = 25
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp2_input 
 
 format =<ramp> <label>
 ;format-underline = #f50a4d
@@ -481,7 +482,7 @@ type = internal/battery
 
 ; This is useful in case the battery never reports 100% charge
 ## Carga máxima expresada en porcentaje
-full-at = 98
+full-at = 9999999999
 
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/
@@ -604,3 +605,9 @@ bar-indicator = |
 bar-fill = ─
 bar-empty = ─
 
+;-------------------------------------------------------
+
+[module/bateria]
+type = custom/script
+exec = ~/.config/polybar/scripts/bateria.sh
+interval = 600
