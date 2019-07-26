@@ -102,7 +102,7 @@ alias layes='setxkbmap -layout es'
 #alias gg='w3m www.google.com'
 
 # Enviar archivos a papelera
-alias rm='mv --target-directory ~/.local/share/Trash/files'
+#alias rm='mv --target-directory ~/.local/share/Trash/files'
 
 # Borrar solicitando confirmación
 #alias rm='rm -Irvd'
