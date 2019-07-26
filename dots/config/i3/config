@@ -349,9 +349,8 @@ client.background       	#111111
 
 #:::::::::::::::::::: Salida del sistema ::::::::::::::::::::::#
 ################################################################
-set $Locker i3lock && sleep 1
+#set $Locker i3lock && sleep 1
 set $mode_system System:   S :   | L :  | E :   | H :  | R :  | P :  
-#set $mode_system System:   L :  | E :  | R :  | P :  
 mode "$mode_system" {
 	bindsym l exec --no-startup-id lock, mode "default"
 	bindsym s exec --no-startup-id lock && sudo zzz, mode "default"
@@ -368,8 +367,17 @@ bindsym $mod+x mode "$mode_system"
 
 ########## Aplicaciones de autoinicio ##########
 
+# Wallpapers dinámicos
+#exec_always watch -n 1200 feh --randomize --bg-fill $HOME/Wallpaper/*
+
 ## Dropbox
 exec --no-startup-id sleep 5s;  ~/.dropbox-dist/dropboxd
+
+# Compositor de ventanas
+exec --no-startup-id compton --config ~/.config/compton/compton.conf
+
+# Notificaciones
+exec --no-startup-id dunst --config ~/.config/dunsts/dunstrc
 
 ## Iniciar polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
