@@ -33,11 +33,6 @@ fi
 
 #-----------------------------------------------------
 
-## Compositor de ventanas
-compton -bc --inactive-dim=0.5 &
-
-#-----------------------------------------------------
-
 ## Wallpaper aleatorio en cada inicio de sesión
 #feh --bg-fill --randomize --no-fehbg ~/Wallpaper/* &
 
@@ -62,7 +57,7 @@ numlockx &
 #----------------------------------------------------
 
 ## Auto montaje de dispositivos
-devmon --exec-on-drive "notify-send -t 9000 --icon=/home/skynet/.icons/mount.png --urgency=low \"Dispositivo %l listo para usar\"" &
+devmon --exec-on-drive "notify-send -t 9000 --icon=$HOME/.icons/mount.png --urgency=normal \"%l\" \"Dispositivo listo para usarse\"" &
 
 #----------------------------------------------------
 
