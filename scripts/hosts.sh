@@ -14,7 +14,7 @@ echo -e "\e[34mHaciendo copia de seguridad del fichero hosts...\e[0m"; cp /etc/h
 echo -e "\e[93mDescargando y copiando lista actualizada para fichero hosts...\e[0m"; wget -O /etc/hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts && #sleep 1s; echo -e "\e[32mOK\e[0m" 
 
 # Agregando lista personalizada de páginas al fichero hosts
-echo -e "\e[31mAgregando parche de lista personalizada al fichero hosts...\e[0m"; cat /home/skynet/Datos/Git_Hub/Void_Linux/otros/parche >> /etc/hosts; sv restart NetworkManager &&
+echo -e "\e[31mAgregando parche de lista personalizada al fichero hosts...\e[0m"; cat /home/skynet/Datos/Git_Hub/Void_Linux/otros/parche >> /etc/hosts; sleep 2; sv restart NetworkManager &&
 
 # Notificacion de actualizacion del fichero
-echo -e "\e[96mTarea finalizada. Fichero host actualizado\e[0m"; notify-send -t 5000 -i ~/.icons/hosts-update.png "Tarea finalizada" 'Fichero hosts actulizado'
+echo -e "\e[96mTarea finalizada. Fichero host actualizado\e[0m"; notify-send -t 5000 -i /home/skynet/.icons/status/hosts_update.png "Tarea finalizada" 'Fichero hosts actulizado'
