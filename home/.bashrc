@@ -59,9 +59,6 @@ fi
 # Instalación sencilla
 alias in='sudo xbps-install'
 
-# Instalar paquetes
-alias ins='sudo xbps-install -S'
-
 # Eliminar paquetes huerfanos y caché de versiones anteriores de paquetes
 alias limpiar='sudo xbps-remove -Oov'
 
@@ -69,16 +66,13 @@ alias limpiar='sudo xbps-remove -Oov'
 alias update='sudo xbps-install -Su'
 
 # Eliminar paquetes
-alias quitar='sudo xbps-remove -R'
+alias xr='sudo xbps-remove -R'
 
 # Congelar paquetes
 alias hold='sudo xbps-pkgdb -m hold'
 
 # Descongelar paquetes
 alias unhold='sudo xbps-pkgdb -m unhold'
-
-# Buscar paquetes
-alias buscar='xbps-query -Rs'
 
 #-------------------------------------------
 
@@ -97,10 +91,6 @@ alias layes='setxkbmap -layout es'
 # Activar teclado interno
 #alias keyon='xinput set-int-prop 12 "Device Enabled" 8 1'
 
-# Navegadores web modo texto
-#alias google='links -g www.google.com.mx'
-#alias gg='w3m www.google.com'
-
 # Enviar archivos a papelera
 #alias rm='mv --target-directory ~/.local/share/Trash/files'
 
@@ -108,7 +98,7 @@ alias layes='setxkbmap -layout es'
 #alias rm='rm -Irvd'
 
 # Mostrar tamaño directorios
-alias how='du -bsh'
+alias du='du -bsh'
 
 # Copiar archivos y directorios con informacion de transferencia
 alias cp='rsync -rh --progress'
@@ -120,10 +110,7 @@ alias Sync='rsync -Prtvu --delete'
 alias dropbox='cd ~/.dropbox-dist && ./dropboxd &'
 
 # Buscar FIND
-alias Find='find . -name'
-
-# Chroot Archlinux
-#alias arch='cd /mnt && sudo /mnt/arch/bin/arch-chroot /mnt/arch && su skynet'
+alias find='find . -name'
 
 ## Mostrar procesos zombies
 alias zombie='ps -el | grep 'Z''
