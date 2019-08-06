@@ -19,6 +19,10 @@ git push origin [branch]: se suben los cambios al repositorio remote en GitHub. 
 ## Sincronizar nuestra copia con el original:
 git pull: baja los cambios del repositorio remoteo a nuestra copia en local
 
+## Fusionar cambios
+git merge branch: Fusiona otra rama a tu rama activa (por ejemplo 'master')
+gt diff source_branch target_branch: Revisar cambios antes de fusionar las ramas
+
 ## La Brújula
 git status: señala lo que se ha modificado en la carpeta de trabajo
 git diff nombre_archivo: Ver los cambios realizados en un fichero
