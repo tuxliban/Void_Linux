@@ -21,6 +21,7 @@ git pull: baja los cambios del repositorio remoteo a nuestra copia en local
 
 ## La Brújula
 git status: señala lo que se ha modificado en la carpeta de trabajo
+git diff nombre_archivo: Ver los cambios realizados en un fichero
 
 ## Branches
 git branch: Para ver en que branch estas trabajando.
