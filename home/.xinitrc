@@ -33,6 +33,12 @@ fi
 
 #-----------------------------------------------------
 
+# Ejecutar rxvt como demonio
+
+#urxvtd &
+
+#-----------------------------------------------------
+
 ## Wallpaper aleatorio en cada inicio de sesión
 #feh --bg-fill --randomize --no-fehbg ~/Wallpaper/* &
 
@@ -71,4 +77,5 @@ xbacklight -set 2 &
 
 #---------------------------------------------------
 ## Gestor de ventanas
-exec i3
+exec i3 --with-ck-launch
+#exec startkde --with-ck-launch
