@@ -349,7 +349,7 @@ client.background       	#111111
 
 #:::::::::::::::::::: Salida del sistema ::::::::::::::::::::::#
 ################################################################
-#set $Locker i3lock && sleep 1
+set $Locker i3lock && sleep 1
 set $mode_system System:   S :   | L :  | E :   | H :  | R :  | P :  
 mode "$mode_system" {
 	bindsym l exec --no-startup-id lock, mode "default"
