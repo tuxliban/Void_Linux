@@ -1,6 +1,5 @@
 # Wifi
 doas wpa_supplicant -i wlp0s20u3 -D wext -c /etc/wpa_supplicant/wpa_supplicant-wlp0s20u3.conf &
-Datos/Git_Hub/Void_Linux/scripts/clima &
 
 # Ocultar puntero del mouse tras un segundo de inactividad
 unclutter --timeout 3 &
@@ -18,7 +17,7 @@ setxkbmap -layout latam &
 numlockx &
 
 # Wallpaper aleatorio
- feh --bg-fill --randomize --no-fehbg ~/Wallpaper/* &
+feh --bg-fill --randomize --no-fehbg ~/Wallpaper/* &
 
 # Automontaje de dispositivos extraíbles 
 devmon --exec-on-drive "notify-send -t 9000 --icon=$HOME/.icons/mount.png --urgency=normal \"%l\" \"Dispositivo listo para usarse\"" &
