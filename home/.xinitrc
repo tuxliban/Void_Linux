@@ -38,11 +38,6 @@ fi
 
 #-----------------------------------------------------
 
-## Wallpaper aleatorio en cada inicio de sesión
-#feh --bg-fill --randomize --no-fehbg ~/Wallpaper/* &
-
-#-----------------------------------------------------
-
 ## Gestor de ventanas
 #exec i3
 exec dwm

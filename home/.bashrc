@@ -40,10 +40,8 @@ man() {
       command man "$@"
 }
 
-#export TERM=xterm
 export PAGER="less"                             # Paginador predeterminado
 export EDITOR="vim"                             # Editor de texto predeterminado
-#export TERMINAL="xterm"                                # Emulador de consola predeterminado
 export TERM="xterm"                             # Emulador de consola predeterminado
 export BROWSER="firefox"                        # Navegador web predeterminado
 export READER="zathura"                         # Lector PDF predeterminado
@@ -81,7 +79,6 @@ alias top='top -d 1 -u skynet'					# Mostrar procesos del usuario
 #alias keyon='xinput set-int-prop 12 "Device Enabled" 8 1'	# Activar teclado interno
 alias del='trash-put'						# Enviar archivos a papelera
 alias empty='trash-empty'						# Vaciar papelera de reciclaje
-#alias rm='rm -Irvd'						# Borrar solicitando confirmación
 alias du='du -bsh'						# Mostrar tamaño directorios
 alias cp='rsync -rh --progress'					# Copiar archivos y directorios con informacion de transferencia
 alias Sync='rsync -Prtvu --delete'				# Sincronización de directorios
@@ -108,4 +105,3 @@ alias bxlocal='rclone -v -P sync /home/skynet/Datos/box_cloud Box: '
 alias bxremote='rclone -v -P sync Box: /home/skynet/Datos/box_cloud'
 
 alias un='devmon --unmount ~/usb/*; notify-send -t 8000 -i ~/.icons/umount.png "Dispositivo %f" "Puede retirarlo con seguridad" '
-#alias sudo='sudo '	# Aplicar los alias aquí declarados cuando se utilice sudo
