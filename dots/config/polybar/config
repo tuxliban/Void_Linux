@@ -54,7 +54,7 @@ font-2 = Font Awesome 5 Free Solid:pixelsize=8;1
 
 modules-left = i3
 modules-center = popup-calendar
-modules-right = mpd pulseaudio updates-void bateria
+modules-right = mpd pulseaudio 
 
 tray-position = right
 tray-padding = 2
@@ -482,7 +482,7 @@ type = internal/battery
 
 ; This is useful in case the battery never reports 100% charge
 ## Carga máxima expresada en porcentaje
-full-at = 9999999999
+full-at = 99
 
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/

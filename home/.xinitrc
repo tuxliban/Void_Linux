@@ -29,8 +29,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-#xrdb -merge ~/.Xresources
-
+[ -f ~/.xprofile ] && . ~/.xprofile &
 #-----------------------------------------------------
 
 # Ejecutar rxvt como demonio
@@ -42,40 +41,8 @@ fi
 ## Wallpaper aleatorio en cada inicio de sesión
 #feh --bg-fill --randomize --no-fehbg ~/Wallpaper/* &
 
-## Wallpaper aleatorio cada 20 minutos
-watch -n 1200 feh --randomize --bg-fill ~/Wallpaper/* &
-
 #-----------------------------------------------------
 
-### Distribución de teclado
-
-## Español latinoamericano
-setxkbmap -layout latam &
-
-## Usar acentos en teclado US
-#setxkbmap us -variant intl
-
-#----------------------------------------------------
-
-## Activar teclado numérico
-numlockx &
-
-#----------------------------------------------------
-
-## Auto montaje de dispositivos
-devmon --exec-on-drive "notify-send -t 9000 --icon=$HOME/.icons/mount.png --urgency=normal \"%l\" \"Dispositivo listo para usarse\"" &
-
-#----------------------------------------------------
-
-## Reproductor de música
-mpd &
-
-#----------------------------------------------------
-
-## Ajustar brillo de pantalla al 2%
-xbacklight -set 2 &
-
-#---------------------------------------------------
 ## Gestor de ventanas
-exec i3 --with-ck-launch
-#exec startkde --with-ck-launch
+#exec i3
+exec dwm

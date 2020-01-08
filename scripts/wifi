@@ -1,0 +1,10 @@
+#!/bin/sh
+
+## Activar interfaz de wifi
+doas wpa_supplicant -i wlp0s20u3 -D wext -c /etc/wpa_supplicant/wpa_supplicant-wlp0s20u3.conf
+
+## Pausa de 5 segundos
+#Sleep 5 &&
+
+## Solicitar dirección IP
+#sudo dhcpcd wlp0s20u3

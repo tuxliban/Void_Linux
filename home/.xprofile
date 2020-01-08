@@ -1,0 +1,30 @@
+# Wifi
+doas wpa_supplicant -i wlp0s20u3 -D wext -c /etc/wpa_supplicant/wpa_supplicant-wlp0s20u3.conf &
+Datos/Git_Hub/Void_Linux/scripts/clima &
+
+# Ocultar puntero del mouse tras un segundo de inactividad
+unclutter --timeout 3 &
+
+# Ajustar brillo de la computadora al 2% predeterminadamente
+light -S 1 &
+
+# Activar configuración de redshift
+redshift -c ~/.config/redshift/redshift.conf &
+
+# Activar distribución de teclado a español latinoamericado
+setxkbmap -layout latam &
+
+# Activar teclado numérico
+numlockx &
+
+# Wallpaper aleatorio
+ feh --bg-fill --randomize --no-fehbg ~/Wallpaper/* &
+
+# Automontaje de dispositivos extraíbles 
+devmon --exec-on-drive "notify-send -t 9000 --icon=$HOME/.icons/mount.png --urgency=normal \"%l\" \"Dispositivo listo para usarse\"" &
+
+# Reproductor de música
+#mpd &
+
+# Panel de estado
+slstatus

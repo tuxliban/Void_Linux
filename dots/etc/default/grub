@@ -6,15 +6,18 @@
 #GRUB_HIDDEN_TIMEOUT_QUIET=false
 GRUB_TIMEOUT=0
 GRUB_DISTRIBUTOR="Void"
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 slub_debug=P page_poison=1"
-#GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 slub_debug=P page_poison=1 initcall_debug printk.time=y quiet init=/sbin/bootchartd"
+#GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 slub_debug=P page_poison=1"
+#GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 slub_debug=P page_poison=1 noibrs noibpb nospectre_v1 nospectre_v2 l1tf=off nospec_store_bypass_disable mds=off mitigations=off"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 slub_debug=P page_poison=1 mitigations=off"
 GRUB_DEFAULT=saved
 GRUB_SAVEDEFAULT=true
 # Uncomment to use basic console
 #GRUB_TERMINAL_INPUT="console"
 # Uncomment to disable graphical terminal
 #GRUB_TERMINAL_OUTPUT=console
-GRUB_BACKGROUND=/usr/share/void-artwork/unix.png
+GRUB_BACKGROUND=/usr/share/void-artwork/grub.png
+GRUB_GFXMODE=auto
+GRUB_GFXPAYLOAD=keep
 #GRUB_GFXMODE=1920x1080x32
 #GRUB_DISABLE_LINUX_UUID=true
 #GRUB_DISABLE_RECOVERY=true

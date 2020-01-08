@@ -1,6 +1,6 @@
 ! URXVT-CONFIG
 !------------------------------------------------
-URxvt.buffered:			true
+URxvt.buffered:				true
 
 ! Color de fondo
 URxvt.background:			black
@@ -13,25 +13,25 @@ URxvt.cursorColor:			green
 
 ! Tipo de fuente
 URxvt.font:				xft:liberationmono:pixelsize=12:antialias=true:hinting=full
-URxvt.boldFont:			xft:liberationmono:bold:pixelsize=12:antialias=true:hinting=full
+URxvt.boldFont:				xft:liberationmono:bold:pixelsize=12:antialias=true:hinting=full
 
 ! Eliminar barra de scroll
 URxvt.scrollBar:			false
 
-URxvt.mouseWheelScrollPage:	false
+URxvt.mouseWheelScrollPage:		false
 
 ! Parpadeo de cursor
-URxvt.cursorBlink:				true
+URxvt.cursorBlink:			true
 
 ! Puntero
 URxvt.pointerBlack:			true
 URxvt.pointerBlackDelay:		3
 
 ! Nombre personalizado para la ventana
-URxvt.title:					Enter the Void
+URxvt.title:				Enter the Void
 
 ! Soporte para pestañas
-!URxvt.perl-ext-common:		default,tabbed
+!URxvt.perl-ext-common:			default,tabbed
 
 !! Bordes del emulador de consola
 ! Pixeles para borde exterior
@@ -43,7 +43,7 @@ URxvt.borderless:			false
 
 ! Transparencias
 URxvt.transparent:			true
-URxvt.shading:			20
+URxvt.shading:				20
 URxvt.fading:				40
 URxvt.blendType:			alphablend
 
@@ -56,16 +56,16 @@ URxvt.clipboard.autocopy:		true
 URxvt.keysym.M-c:			perl:clipboard:copy
 URxvt.keysym.M-v:			perl:clipboard:paste
 URxvt.keysym.M-C-v:			perl:clipboard:paste_escaped
-URxvt.keysym.M-Escape:		perl:keyboard-select:activate
+URxvt.keysym.M-Escape:			perl:keyboard-select:activate
 URvt.copyCommand:			xclip -o -selection clipboard
 URxvt.pasteCommand:			xclip -o -selection clipboard
 
 ! Otras configuraciones
 !--------------------------------------
 ! Pestañas
-URxvt.perl-ext-common:		default,clipboard,url-select,keyboard-select,tabbed
+URxvt.perl-ext-common:			default,clipboard,url-select,keyboard-select,tabbed
 Urxvt.tabbed.tabbar-fg:			8
-URxvt.tabbed.tabbar-bg:		0
+URxvt.tabbed.tabbar-bg:			0
 URxvt.tabbed.tab-fg:			3
 URxvt.tabbed-tab-bg:			0
 
@@ -74,5 +74,5 @@ URxvt.perl-ext:				default,matcher
 URxvt.urllauncher:				w3m
 !URxvt.url-select.underline:		true
 !URxvt.keysym.M-u:			perl:url-select:select_next
-!URxvt.keysym.M-Escape:		perl:keyboard-select:activate
+!URxvt.keysym.M-Escape:			perl:keyboard-select:activate
 !URxvt.keysym.M-s:			perl:keyboard-select:search

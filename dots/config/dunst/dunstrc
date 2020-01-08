@@ -2,7 +2,7 @@
 #    frame_width = 1
 #    frame_color = "#788388"
     
-    font = Monospace 9 
+    font = Ubuntu 8 
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -156,7 +156,8 @@
     icon_position = left
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+    #icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+    icon_path = /usr/share/icons/Papirus/16x16/mimetypes/:/usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/48x48/emblems/
 
     # Limit icons size.
     max_icon_size=48
@@ -189,22 +190,26 @@
     background = "#263238"
     foreground = "#556064"
     timeout = 5
-    icon = ~/.icons/notifications/low.png
+#    icon = ~/.icons/notifications/low.png
 
 [urgency_normal]
     background = "#263238"
     foreground = "#F9FAF9"
     timeout = 10
-    icon = ~/.icons/notifications/normal.png
+#    icon = ~/.icons/notifications/normal.png
 
 [urgency_critical]
     background = "#D62929"
     foreground = "#F9FAF9"
     timeout = 0
-    icon = ~/.icons/notifications/critical.png
+#    icon = ~/.icons/notifications/critical.png
 
 mouse_left_click = close_current
 mouse_right_click = do_action
+
+[play_sound]
+summary = "*"
+script = ~/Datos/Git_Hub/Void_Linux/scripts/dunst_sound
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

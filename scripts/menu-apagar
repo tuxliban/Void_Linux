@@ -1,0 +1,24 @@
+#!/bin/sh 
+
+RET=$(echo "" Apagar"\n" Reiniciar"\n" Bloquear"\n" Suspender"\n" Hibernar"\n" logout"\ncancel" | dmenu -l 7 -p " Logout") 
+case $RET in 
+	" Apagar") 
+		doas shutdown -h now 
+		;; 
+	" Reiniciar") 
+		doas shutdown -r now 
+		;;
+	" Bloquear")
+		lock
+		;;
+	" Suspender")
+		lock && doas zzz
+		;;
+	" Hibernar")
+		lock && doas ZZZ
+		;;	
+	" logout") 
+		xdotool key "super+shift+q" 
+		;; 
+	*) ;; 
+esac

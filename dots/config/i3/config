@@ -85,9 +85,8 @@ for_window [title="Abrir"] resize set 600 400, move position center
 for_window [title="Guardar como"] resize set 600 400, move position center
 for_window [title="Exportar"] resize set 600 400, move position center
 
-# Meld (comparar textos)
-for_window [title="Seleccionar el primer archivo"] resize set 600 400, move position center
-
+# Thunderbird
+for_window [window_role="Msgcompose" class="(?i)Thunderbird"] resize set 800 600, move position center
 
 #::::::::::::::::: Control de volumen :::::::::::::::#
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
@@ -244,14 +243,17 @@ bindsym $mod+Shift+F2 workspace $WS2; exec waterfox
 ## Telegram
 bindsym $mod+F3 workspace $WS3; exec /usr/bin/Telegram
 
+## Thunderbird
+bindsym $mod+F4; exec thunderbird
+
 ## Reproductor de música
-bindsym $mod+F5 workspace $WS5; exec urxvt -e 'ncmpcpp'
+bindsym $mod+F10 workspace $WS5; exec urxvt -e 'ncmpcpp'
 
 ## Editor de imágenes Gimp
 bindsym $mod+Shift+F9 workspace $WS6; exec gimp
 
 ## Mezclador de música (alternativa libre VirtualDJ)
-bindsym $mod+F10 workspace $WS5; exec mixxx
+#bindsym $mod+F10 workspace $WS5; exec mixxx
 
 #::::::::::::::: Captura de pantalla en portapapel :::::::::::::::#
 # Para que funcione esta opción, es necesario tener instalado xclip
@@ -265,7 +267,7 @@ bindsym Shift+Print --release exec "scrot -s /tmp/'select-%F_%T.png' -e 'xclip -
 bindsym $mod+Print --release exec "scrot -q 100 '%F_%H%M%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/screenshot.png 'Captura de pantalla' 'guardada en: ~/Datos/Capturas'"
 
 #::::::::::::::: Guardar captura de pantalla del área seleccionada :::::::::::::::#
-bindsym $mod+Shift+Print --release exec "scrot -s -q 100 'Select_%F_%H%M%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/select'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/workspace.png 'Área seleccionda' 'guardada en: ~/Datos/Capturas/select'"
+bindsym $mod+Shift+Print --release exec "scrot -s -d 2 -q 100 'Select_%F_%H%M%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/select'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/workspace.png 'Área seleccionda' 'guardada en: ~/Datos/Capturas/select'"
 
 #::::::::::::::: Guardar captura de pantalla de la ventana enfocada :::::::::::::::#
 bindsym Ctrl+Print --release exec "scrot -u -q 100 'Focus_%F_%H%M%S_$wx$h.png' -e 'mv $f /home/skynet/Datos/Capturas/focus'; sleep 1; exec notify-send -t 5000 --icon=/home/skynet/.icons/window.png 'Ventana enfocada' 'guardada en: ~/Datos/Capturas/focus'"
@@ -368,16 +370,19 @@ bindsym $mod+x mode "$mode_system"
 ########## Aplicaciones de autoinicio ##########
 
 # Wallpapers dinámicos
-#exec_always watch -n 1200 feh --randomize --bg-fill $HOME/Wallpaper/*
+exec watch -n 1200 feh --randomize --bg-fill $HOME/Wallpaper/*
 
 ## Dropbox
 exec --no-startup-id sleep 5s;  ~/.dropbox-dist/dropboxd
 
 # Compositor de ventanas
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
+exec compton --config ~/.config/compton/compton.conf
 
 # Notificaciones
-exec --no-startup-id dunst --config ~/.config/dunsts/dunstrc
+exec dunst --config ~/.config/dunsts/dunstrc
+
+# Redshift
+exec sleep 5s; redshift -c ~/.config/redshift/redshift.conf
 
 ## Iniciar polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh

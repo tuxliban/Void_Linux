@@ -1,9 +1,9 @@
-sw_volume: 95
+sw_volume: 56
 audio_device_state:1:pulse audio
-state: play
-current: 180
-time: 4.083000
-random: 0
+state: pause
+current: 389
+time: 227.604000
+random: 1
 repeat: 0
 single: 0
 consume: 0
@@ -14,218 +14,453 @@ playlist_begin
 0:19-2000.mp3
 1:A Little Less Conversation (JXL Radio Edit Remix).mp3
 2:A Thousand Years.mp3
-3:Agua (Versión 50 Palos).mp3
-4:Al Final.mp3
-5:Almohada.mp3
-6:Amárrame.mp3
-7:Amor Completo.mp3
-8:Another Brick in the Wall, Pt. 2.mp3
-9:Another One Bites The Dust.mp3
-10:Antes De Ti.mp3
-11:Arrullo De Estrellas (Live 8.11.14).mp3
-12:Así Es La Vida (Album Version).mp3
-13:Asi Fue.mp3
-14:Asi Te Quiero.mp3
-15:Atrévete-Te-Te.mp3
-16:Back In Black.mp3
-17:Back To Black.mp3
-18:Bailando Solo.mp3
-19:Bendita Tu Luz.mp3
-20:Blurred Lines.mp3
-21:Bohemian Rhapsody Remastered 2011.mp3
-22:Brillas.mp3
-23:Bring Me To Life.mp3
-24:Bye Bye.mp3
-25:California Dreamin' (Single Version).mp3
-26:Cama y Mesa (Cama e Mesa).mp3
-27:Can't Help Falling In Love.mp3
-28:Can't Take My Eyes Off You.mp3
-29:Caraluna.mp3
-30:Chandelier.mp3
-31:Clint Eastwood.mp3
-32:Clocks.mp3
-33:Como dueles en los labios.mp3
-34:Cómo Te Extraño Mi Amor (En Vivo).mp3
-35:Como Te Extraño Mi Amor.mp3
-36:Cómo Te Extraño Mi Amor.mp3
-37:Como Tú (Magic Music Box).mp3
-38:Como Tu.mp3
-39:Contigo.mp3
-40:Corazon Espinado.mp3
-41:Creep.mp3
-42:Crimen.mp3
-43:Cuando Pase El Temblor (Remasterizado 2007).mp3
-44:Cuídate.mp3
-45:Dancing Queen.mp3
-46:DARE.mp3
-47:De la Noche a la Mañana.mp3
-48:De Música Ligera (Remasterizado 2007).mp3
-49:Depende (Versión 50 Palos).mp3
-50:Desesperado.mp3
-51:Detalles (Detalhes).mp3
-52:Detalles (Primera Fila - En Vivo).mp3
-53:Detras De Los Cerros.mp3
-54:Devuelveme a mi chica.mp3
-55:Diséñame.mp3
-56:Don't Stop Me Now Remastered 2011.mp3
-57:Duele (feat. Bunbury).mp3
-58:Duerme conmigo.mp3
-59:Durmiendo con la Luna.mp3
-60:El Abandonao (Version Censurada).mp3
-61:El Amar y el Querer.mp3
-62:El Ataque De Las Chicas Cocodrilo.mp3
-63:El Gato Que Está Triste Y Azul (Un Gato Nel Blu).mp3
-64:El lado oscuro.mp3
-65:El Satánico Dr. Cadillac.mp3
-66:El Triste.mp3
-67:El Ultimo Vals.mp3
-68:Ella es Bonita.mp3
-69:Esa Pared.mp3
-70:Feel Good Inc.mp3
-71:Flaca.mp3
-72:Frente A Frente.mp3
-73:Gotas de Fuego.mp3
-74:Guerras perdidas.mp3
-75:Hasta la Raíz.mp3
-76:Hasta Que Te Conocí (Album Version).mp3
-77:Hasta Que Te Conoci.mp3
-78:Hasta que te conocí.mp3
-79:He Renunciado a Ti (Remasterizado).mp3
-80:Hechizo.mp3
-81:Highway to Hell.mp3
-82:How Deep Is Your Love.mp3
-83:I Don't Want To Miss A Thing.mp3
-84:I Want To Break Free Remastered 2011.mp3
-85:I Was Made For Lovin' You.mp3
-86:I'm Not The Only One.mp3
-87:Immigrant Song.mp3
-88:Inmortal.mp3
-89:Jueves.mp3
-90:Kumbala (Remasterizado).mp3
-91:Kumbala (Versión Sinfónico).mp3
-92:La Celula Que Explota.mp3
-93:La Chispa Adecuada (Bendecida 3).mp3
-94:La Diferencia (Album Version).mp3
-95:La flaca.mp3
-96:La Herida.mp3
-97:La Muralla Verde.mp3
-98:La Nave del Olvido.mp3
-99:La Niña Está Triste (En Vivo).mp3
-100:La pachanga.mp3
-101:La Playa.mp3
-102:Labios Rotos.mp3
-103:Lady Marmalade.mp3
-104:Lamento Boliviano.mp3
-105:Like a Stone.mp3
-106:Lo Dudo (Remasterizado).mp3
-107:Lo noto (version cd).mp3
-108:Lo Pasado, Pasado (Remasterizado).mp3
-109:Louis.mp3
-110:Love.mp3
-111:Luna.mp3
-112:Luz De Dia.mp3
-113:Malaguena Salerosa.mp3
-114:Maldito Duende.mp3
-115:Man Like That.mp3
-116:Mariposa traicionera.mp3
-117:Marta tiene un marcapasos.mp3
-118:Mary Es Mi Amor (En Vivo).mp3
-119:Mary Es Mi Amor.mp3
-120:Maybe I Maybe You.mp3
-121:Me Basta.mp3
-122:Me gusta como eres.mp3
-123:Me Gustas.mp3
-124:Mentirosa.mp3
-125:Mi Buen Amor.mp3
-126:Muerte En Hawaii.mp3
-127:Muñeca de Trapo.mp3
-128:My Immortal.mp3
-129:Nada (feat. Enrique Bunbury).mp3
-130:Nada Fue Un Error (Live In Spain  2005).mp3
-131:Nada Personal (Remasterizado 2007).mp3
-132:Night Fever.mp3
-133:Nightrain.mp3
-134:No Basta.mp3
-135:No Dejes Que.mp3
-136:No Discutamos.mp3
-137:No Hay Nadie Como Tú (Clean Version).mp3
-138:No Me Digas Que Te Vas.mp3
-139:November Rain (Album Version).mp3
-140:Nunca Es Suficiente.mp3
-141:Ojos Color Sol.mp3
-142:Oye mi amor.mp3
-143:Paris.mp3
-144:Party All Night.mp3
-145:Persiana Americana (Remasterizado 2007).mp3
-146:Play That Funky Music.mp3
-147:Preso.mp3
-148:Prófugos (Remasterizado 2007).mp3
-149:Puedes Contar Conmigo.mp3
-150:Qué Tiene la Niña.mp3
-151:Querida (Album Version).mp3
-152:Rayando el sol.mp3
-153:Rock N Roll Train.mp3
-154:Rock the House.mp3
-155:Rosas.mp3
-156:Rumores.mp3
-157:Sabor A Chocolate (Album Version).mp3
-158:Sabotage (Digitally Remastered 2005).mp3
-159:Sabotage.mp3
-160:Se Me Olvidó Otra Vez (Album Version).mp3
-161:Se me olvidó otra vez (unplugged).mp3
-162:Sentimental.mp3
-163:SexyBack.mp3
-164:Si la Ves.mp3
-165:Si No Te Tengo A Ti.mp3
-166:Si Quieres (Album Version).mp3
-167:Sí.mp3
-168:Siempre en Mi Mente.mp3
-169:Siguiendo La Luna.mp3
-170:Sin Tu Latido.mp3
-171:Smells Like Teen Spirit.mp3
-172:Soñé.mp3
-173:Stay With Me.mp3
-174:Stayin' Alive (From Saturday Night Fever Soundtrack).mp3
-175:Still Loving You.mp3
-176:Sweet Child O' Mine.mp3
-177:Tan Sólo Tú (Franco De Vita en Primera Fila).mp3
-178:Tango del Pecado.mp3
-179:Tatuajes.mp3
-180:Te Amo (Album Version).mp3
-181:Te He Prometido (En Vivo).mp3
-182:Te He Prometido.mp3
-183:Te Lo Pido por Favor.mp3
-184:Te Necesito.mp3
-185:Te Quiero.mp3
-186:Temblando.mp3
-187:The Scientist.mp3
-188:Thunderstruck.mp3
-189:To Love Somebody (Mono).mp3
-190:Tormento.mp3
-191:Tú de Qué Vas.mp3
-192:Tu Falta De Querer.mp3
-193:Tus Viejas Cartas.mp3
-194:Un Buen Perdedor (Album Version).mp3
-195:Un Buen Perdedor Album Version.mp3
-196:Un Idiota.mp3
-197:Vamos a Darnos Tiempo.mp3
-198:Vasos Vacíos.mp3
-199:Veneno.mp3
-200:Venezia.mp3
-201:Verano.mp3
-202:Verde Más Allá.mp3
-203:Viento.mp3
-204:Vivir sin aire.mp3
-205:War Machine.mp3
-206:We Are The Champions.mp3
-207:We Will Rock You Remastered 2011.mp3
-208:Wind Of Change.mp3
-209:Words.mp3
-210:Y Si Fuera Ella (Live At The Royal Albert Hall  2012).mp3
-211:Yo Sé Que No Es Feliz (En Vivo).mp3
-212:Yo Sé Que No Es Feliz.mp3
-213:Yo Te Recuerdo (Version Salsa).mp3
-214:You Know I'm No Good.mp3
-215:You're the One That I Want.mp3
-216:Zombie.mp3
+3:Abrázame Muy Fuerte (Album Version).mp3
+4:Adele - Rolling in the Deep.mp3
+5:Agua (Versión 50 Palos).mp3
+6:Al Final.mp3
+7:Alex Gaudino Feat.  Shena - Watch Out (Official Video) HD - Dance Essentials-LLyvBHeeono.mp3
+8:Alex Gaudino feat. Crystal Waters - Destination Calabria [Explicit Version] [Official Video]-Kq4OtRsdXls.mp3
+9:Almohada.mp3
+10:Amárrame.mp3
+11:Amor Completo.mp3
+12:ANGEL - Elefante (letra)-CwIAZAg_CbM.mp3
+13:Another Brick in the Wall, Pt. 2.mp3
+14:Another One Bites The Dust.mp3
+15:Antes De Ti.mp3
+16:Arrullo De Estrellas (Live 8.11.14).mp3
+17:Así Es La Vida (Album Version).mp3
+18:Asi Fue.mp3
+19:Asi Te Quiero.mp3
+20:Atrévete-Te-Te.mp3
+21:Back In Black.mp3
+22:Back To Black.mp3
+23:Bailando Solo.mp3
+24:Bendita Tu Luz.mp3
+25:Blurred Lines.mp3
+26:Bohemian Rhapsody Remastered 2011.mp3
+27:Brillas.mp3
+28:Bring Me To Life.mp3
+29:Bye Bye.mp3
+30:California Dreamin' (Single Version).mp3
+31:Cama y Mesa (Cama e Mesa).mp3
+32:Can't Help Falling In Love.mp3
+33:Can't Take My Eyes Off You.mp3
+34:CANCION RAPIDO Y FURIOSO RETO TOKIO.mp3
+35:Caraluna.mp3
+36:Chandelier.mp3
+37:Clint Eastwood.mp3
+38:Clocks.mp3
+39:Como dueles en los labios.mp3
+40:Cómo Te Extraño Mi Amor (En Vivo).mp3
+41:Como Te Extraño Mi Amor.mp3
+42:Como Tú (Magic Music Box).mp3
+43:Como Tu.mp3
+44:Contigo.mp3
+45:Corazon Espinado.mp3
+46:Creep.mp3
+47:Crimen.mp3
+48:Cuando Pase El Temblor (Remasterizado 2007).mp3
+49:Cuídate.mp3
+50:Dancing Queen.mp3
+51:DARE.mp3
+52:De la Noche a la Mañana.mp3
+53:De Música Ligera (Remasterizado 2007).mp3
+54:Depende (Versión 50 Palos).mp3
+55:Desesperado.mp3
+56:Designer music - lipps inc-q1Cdtol3mKc.mp3
+57:Detalles (Detalhes).mp3
+58:Detalles (Primera Fila - En Vivo).mp3
+59:Detras De Los Cerros.mp3
+60:Devuelveme a mi chica.mp3
+61:Diséñame.mp3
+62:Don't Stop Me Now Remastered 2011.mp3
+63:Duele (feat. Bunbury).mp3
+64:Duerme conmigo.mp3
+65:Durmiendo con la Luna.mp3
+66:El Abandonao (Version Censurada).mp3
+67:El Amar y el Querer.mp3
+68:El Ataque De Las Chicas Cocodrilo.mp3
+69:El Gato Que Está Triste Y Azul (Un Gato Nel Blu).mp3
+70:El Haragan - Mi muñequita sintetica-526LfRZpmX0.mp3
+71:el haragan-el no lo mato-HsiHNszCfYk.mp3
+72:El lado oscuro.mp3
+73:El Satánico Dr. Cadillac.mp3
+74:El Triste.mp3
+75:El Ultimo Vals.mp3
+76:Ella es Bonita.mp3
+77:Enmanuel - La Chica De Humo.mp3
+78:Esa Pared.mp3
+79:Feel Good Inc.mp3
+80:Flaca.mp3
+81:Frente A Frente.mp3
+82:Gotas de Fuego.mp3
+83:Guerras perdidas.mp3
+84:Hasta la Raíz.mp3
+85:Hasta Que Te Conocí (Album Version).mp3
+86:Hasta Que Te Conoci.mp3
+87:Hasta que te conocí.mp3
+88:He Renunciado a Ti (Remasterizado).mp3
+89:Hechizo.mp3
+90:Highway to Hell.mp3
+91:How Deep Is Your Love.mp3
+92:I Don't Want To Miss A Thing.mp3
+93:I Want To Break Free Remastered 2011 - Queen.mp3
+94:I Want To Break Free Remastered 2011.mp3
+95:I Was Made For Lovin' You.mp3
+96:I'm Not The Only One.mp3
+97:Immigrant Song.mp3
+98:Inmortal.mp3
+99:Jueves.mp3
+100:Kumbala (Remasterizado).mp3
+101:Kumbala (Versión Sinfónico).mp3
+102:La Celula Que Explota.mp3
+103:La Chispa Adecuada (Bendecida 3).mp3
+104:La Diferencia (Album Version).mp3
+105:La flaca.mp3
+106:La Herida.mp3
+107:LA MOSCA - PARA NO VERTE MAS-Bydc-zhfdgM.mp3
+108:La Muralla Verde.mp3
+109:La Nave del Olvido.mp3
+110:La Niña Está Triste (En Vivo).mp3
+111:La pachanga.mp3
+112:La Playa.mp3
+113:Labios Rotos.mp3
+114:Lady Marmalade.mp3
+115:Lamento Boliviano.mp3
+116:Like a Stone.mp3
+117:Lo Dudo (Remasterizado).mp3
+118:Lo noto (version cd).mp3
+119:Lo Pasado, Pasado (Remasterizado).mp3
+120:Louis.mp3
+121:Love.mp3
+122:Luna.mp3
+123:Luz De Dia.mp3
+124:Malaguena Salerosa.mp3
+125:Maldito Duende.mp3
+126:Man Like That.mp3
+127:Mariposa traicionera.mp3
+128:Marta tiene un marcapasos.mp3
+129:Mary Es Mi Amor (En Vivo).mp3
+130:Mary Es Mi Amor.mp3
+131:Maybe I Maybe You.mp3
+132:Me Basta.mp3
+133:Me gusta como eres.mp3
+134:Me Gustas.mp3
+135:Mentirosa.mp3
+136:Mi Buen Amor.mp3
+137:Molotov - Puto.mp3
+138:Muerte En Hawaii.mp3
+139:Muñeca de Trapo.mp3
+140:My Immortal.mp3
+141:Nada (feat. Enrique Bunbury).mp3
+142:Nada Fue Un Error (Live In Spain  2005).mp3
+143:Nada Personal (Remasterizado 2007).mp3
+144:Night Fever.mp3
+145:Nightrain.mp3
+146:No Basta.mp3
+147:No Dejes Que.mp3
+148:No Discutamos.mp3
+149:No Hay Nadie Como Tú (Clean Version).mp3
+150:No Me Digas Que Te Vas.mp3
+151:November Rain (Album Version).mp3
+152:Nunca Es Suficiente.mp3
+153:Ojos Color Sol.mp3
+154:Oye mi amor.mp3
+155:Paris.mp3
+156:Party All Night.mp3
+157:Persiana Americana (Remasterizado 2007).mp3
+158:Play That Funky Music.mp3
+159:Preso.mp3
+160:Prófugos (Remasterizado 2007).mp3
+161:Puedes Contar Conmigo.mp3
+162:Qué Tiene la Niña.mp3
+163:Querida (Album Version).mp3
+164:Rayando el sol.mp3
+165:Rock N Roll Train.mp3
+166:Rock the House.mp3
+167:Rosas.mp3
+168:Rumores.mp3
+169:Sabor A Chocolate (Album Version).mp3
+170:Sabotage (Digitally Remastered 2005).mp3
+171:Se Me Olvidó Otra Vez (Album Version).mp3
+172:Se me olvidó otra vez (unplugged).mp3
+173:Sentimental.mp3
+174:SexyBack.mp3
+175:Si la Ves.mp3
+176:Si No Te Tengo A Ti.mp3
+177:Si Quieres (Album Version).mp3
+178:Sí.mp3
+179:Siempre en Mi Mente.mp3
+180:Siguiendo La Luna.mp3
+181:Sin Tu Latido.mp3
+182:Smells Like Teen Spirit.mp3
+183:Soñé.mp3
+184:Stay With Me.mp3
+185:Stayin' Alive (From Saturday Night Fever Soundtrack).mp3
+186:Still Loving You.mp3
+187:Sweet Child O' Mine.mp3
+188:Tan Sólo Tú (Franco De Vita en Primera Fila).mp3
+189:Tango del Pecado.mp3
+190:Tatuajes.mp3
+191:Te Amo (Album Version).mp3
+192:Te He Prometido (En Vivo).mp3
+193:Te Lo Pido por Favor.mp3
+194:Te Necesito.mp3
+195:Te Quiero.mp3
+196:Temblando.mp3
+197:The Scientist.mp3
+198:Thunderstruck.mp3
+199:To Love Somebody (Mono).mp3
+200:Tormento.mp3
+201:Tú de Qué Vas.mp3
+202:Tu Falta De Querer.mp3
+203:Tus Viejas Cartas.mp3
+204:Un Buen Perdedor (Album Version).mp3
+205:Un Buen Perdedor Album Version.mp3
+206:Un Idiota.mp3
+207:Vamos a Darnos Tiempo.mp3
+208:Vasos Vacíos.mp3
+209:Veneno.mp3
+210:Venezia.mp3
+211:Verano.mp3
+212:Verde Más Allá.mp3
+213:Viento.mp3
+214:Vivir sin aire.mp3
+215:War Machine.mp3
+216:We Are The Champions.mp3
+217:We Will Rock You Remastered 2011.mp3
+218:Wind Of Change.mp3
+219:Words.mp3
+220:Y Si Fuera Ella (Live At The Royal Albert Hall  2012).mp3
+221:Yo Sé Que No Es Feliz (En Vivo).mp3
+222:Yo Te Recuerdo (Version Salsa).mp3
+223:You Know I'm No Good.mp3
+224:You're the One That I Want.mp3
+225:Zombie.mp3
+226:19-2000.mp3
+227:A Little Less Conversation (JXL Radio Edit Remix).mp3
+228:A Thousand Years.mp3
+229:Abrázame Muy Fuerte (Album Version).mp3
+230:Adele - Rolling in the Deep.mp3
+231:Agua (Versión 50 Palos).mp3
+232:Al Final.mp3
+233:Alex Gaudino Feat.  Shena - Watch Out (Official Video) HD - Dance Essentials-LLyvBHeeono.mp3
+234:Alex Gaudino feat. Crystal Waters - Destination Calabria [Explicit Version] [Official Video]-Kq4OtRsdXls.mp3
+235:Almohada.mp3
+236:Amárrame.mp3
+237:Amor Completo.mp3
+238:ANGEL - Elefante (letra)-CwIAZAg_CbM.mp3
+239:Another Brick in the Wall, Pt. 2.mp3
+240:Another One Bites The Dust.mp3
+241:Antes De Ti.mp3
+242:Arrullo De Estrellas (Live 8.11.14).mp3
+243:Así Es La Vida (Album Version).mp3
+244:Asi Fue.mp3
+245:Asi Te Quiero.mp3
+246:Atrévete-Te-Te.mp3
+247:Back In Black.mp3
+248:Back To Black.mp3
+249:Bailando Solo.mp3
+250:Bendita Tu Luz.mp3
+251:Blurred Lines.mp3
+252:Bohemian Rhapsody Remastered 2011.mp3
+253:Brillas.mp3
+254:Bring Me To Life.mp3
+255:Bye Bye.mp3
+256:California Dreamin' (Single Version).mp3
+257:Cama y Mesa (Cama e Mesa).mp3
+258:Can't Help Falling In Love.mp3
+259:Can't Take My Eyes Off You.mp3
+260:CANCION RAPIDO Y FURIOSO RETO TOKIO.mp3
+261:Caraluna.mp3
+262:Chandelier.mp3
+263:Clint Eastwood.mp3
+264:Clocks.mp3
+265:Como dueles en los labios.mp3
+266:Cómo Te Extraño Mi Amor (En Vivo).mp3
+267:Como Te Extraño Mi Amor.mp3
+268:Como Tú (Magic Music Box).mp3
+269:Como Tu.mp3
+270:Contigo.mp3
+271:Corazon Espinado.mp3
+272:Creep.mp3
+273:Crimen.mp3
+274:Cuando Pase El Temblor (Remasterizado 2007).mp3
+275:Cuídate.mp3
+276:Dancing Queen.mp3
+277:DARE.mp3
+278:De la Noche a la Mañana.mp3
+279:De Música Ligera (Remasterizado 2007).mp3
+280:Depende (Versión 50 Palos).mp3
+281:Desesperado.mp3
+282:Designer music - lipps inc-q1Cdtol3mKc.mp3
+283:Detalles (Detalhes).mp3
+284:Detalles (Primera Fila - En Vivo).mp3
+285:Detras De Los Cerros.mp3
+286:Devuelveme a mi chica.mp3
+287:Diséñame.mp3
+288:Don't Stop Me Now Remastered 2011.mp3
+289:Duele (feat. Bunbury).mp3
+290:Duerme conmigo.mp3
+291:Durmiendo con la Luna.mp3
+292:El Abandonao (Version Censurada).mp3
+293:El Amar y el Querer.mp3
+294:El Ataque De Las Chicas Cocodrilo.mp3
+295:El Gato Que Está Triste Y Azul (Un Gato Nel Blu).mp3
+296:El Haragan - Mi muñequita sintetica-526LfRZpmX0.mp3
+297:el haragan-el no lo mato-HsiHNszCfYk.mp3
+298:El lado oscuro.mp3
+299:El Satánico Dr. Cadillac.mp3
+300:El Triste.mp3
+301:El Ultimo Vals.mp3
+302:Ella es Bonita.mp3
+303:Enmanuel - La Chica De Humo.mp3
+304:Esa Pared.mp3
+305:Feel Good Inc.mp3
+306:Flaca.mp3
+307:Frente A Frente.mp3
+308:Gotas de Fuego.mp3
+309:Guerras perdidas.mp3
+310:Hasta la Raíz.mp3
+311:Hasta Que Te Conocí (Album Version).mp3
+312:Hasta Que Te Conoci.mp3
+313:Hasta que te conocí.mp3
+314:He Renunciado a Ti (Remasterizado).mp3
+315:Hechizo.mp3
+316:Highway to Hell.mp3
+317:How Deep Is Your Love.mp3
+318:I Don't Want To Miss A Thing.mp3
+319:I Want To Break Free Remastered 2011 - Queen.mp3
+320:I Want To Break Free Remastered 2011.mp3
+321:I Was Made For Lovin' You.mp3
+322:I'm Not The Only One.mp3
+323:Immigrant Song.mp3
+324:Inmortal.mp3
+325:Jueves.mp3
+326:Kumbala (Remasterizado).mp3
+327:Kumbala (Versión Sinfónico).mp3
+328:La Celula Que Explota.mp3
+329:La Chispa Adecuada (Bendecida 3).mp3
+330:La Diferencia (Album Version).mp3
+331:La flaca.mp3
+332:La Herida.mp3
+333:LA MOSCA - PARA NO VERTE MAS-Bydc-zhfdgM.mp3
+334:La Muralla Verde.mp3
+335:La Nave del Olvido.mp3
+336:La Niña Está Triste (En Vivo).mp3
+337:La pachanga.mp3
+338:La Playa.mp3
+339:Labios Rotos.mp3
+340:Lady Marmalade.mp3
+341:Lamento Boliviano.mp3
+342:Like a Stone.mp3
+343:Lo Dudo (Remasterizado).mp3
+344:Lo noto (version cd).mp3
+345:Lo Pasado, Pasado (Remasterizado).mp3
+346:Louis.mp3
+347:Love.mp3
+348:Luna.mp3
+349:Luz De Dia.mp3
+350:Malaguena Salerosa.mp3
+351:Maldito Duende.mp3
+352:Man Like That.mp3
+353:Mariposa traicionera.mp3
+354:Marta tiene un marcapasos.mp3
+355:Mary Es Mi Amor (En Vivo).mp3
+356:Mary Es Mi Amor.mp3
+357:Maybe I Maybe You.mp3
+358:Me Basta.mp3
+359:Me gusta como eres.mp3
+360:Me Gustas.mp3
+361:Mentirosa.mp3
+362:Mi Buen Amor.mp3
+363:Molotov - Puto.mp3
+364:Muerte En Hawaii.mp3
+365:Muñeca de Trapo.mp3
+366:My Immortal.mp3
+367:Nada (feat. Enrique Bunbury).mp3
+368:Nada Fue Un Error (Live In Spain  2005).mp3
+369:Nada Personal (Remasterizado 2007).mp3
+370:Night Fever.mp3
+371:Nightrain.mp3
+372:No Basta.mp3
+373:No Dejes Que.mp3
+374:No Discutamos.mp3
+375:No Hay Nadie Como Tú (Clean Version).mp3
+376:No Me Digas Que Te Vas.mp3
+377:November Rain (Album Version).mp3
+378:Nunca Es Suficiente.mp3
+379:Ojos Color Sol.mp3
+380:Oye mi amor.mp3
+381:Paris.mp3
+382:Party All Night.mp3
+383:Persiana Americana (Remasterizado 2007).mp3
+384:Play That Funky Music.mp3
+385:Preso.mp3
+386:Prófugos (Remasterizado 2007).mp3
+387:Puedes Contar Conmigo.mp3
+388:Qué Tiene la Niña.mp3
+389:Querida (Album Version).mp3
+390:Rayando el sol.mp3
+391:Rock N Roll Train.mp3
+392:Rock the House.mp3
+393:Rosas.mp3
+394:Rumores.mp3
+395:Sabor A Chocolate (Album Version).mp3
+396:Sabotage (Digitally Remastered 2005).mp3
+397:Se Me Olvidó Otra Vez (Album Version).mp3
+398:Se me olvidó otra vez (unplugged).mp3
+399:Sentimental.mp3
+400:SexyBack.mp3
+401:Si la Ves.mp3
+402:Si No Te Tengo A Ti.mp3
+403:Si Quieres (Album Version).mp3
+404:Sí.mp3
+405:Siempre en Mi Mente.mp3
+406:Siguiendo La Luna.mp3
+407:Sin Tu Latido.mp3
+408:Smells Like Teen Spirit.mp3
+409:Soñé.mp3
+410:Stay With Me.mp3
+411:Stayin' Alive (From Saturday Night Fever Soundtrack).mp3
+412:Still Loving You.mp3
+413:Sweet Child O' Mine.mp3
+414:Tan Sólo Tú (Franco De Vita en Primera Fila).mp3
+415:Tango del Pecado.mp3
+416:Tatuajes.mp3
+417:Te Amo (Album Version).mp3
+418:Te He Prometido (En Vivo).mp3
+419:Te Lo Pido por Favor.mp3
+420:Te Necesito.mp3
+421:Te Quiero.mp3
+422:Temblando.mp3
+423:The Scientist.mp3
+424:Thunderstruck.mp3
+425:To Love Somebody (Mono).mp3
+426:Tormento.mp3
+427:Tú de Qué Vas.mp3
+428:Tu Falta De Querer.mp3
+429:Tus Viejas Cartas.mp3
+430:Un Buen Perdedor (Album Version).mp3
+431:Un Buen Perdedor Album Version.mp3
+432:Un Idiota.mp3
+433:Vamos a Darnos Tiempo.mp3
+434:Vasos Vacíos.mp3
+435:Veneno.mp3
+436:Venezia.mp3
+437:Verano.mp3
+438:Verde Más Allá.mp3
+439:Viento.mp3
+440:Vivir sin aire.mp3
+441:War Machine.mp3
+442:We Are The Champions.mp3
+443:We Will Rock You Remastered 2011.mp3
+444:Wind Of Change.mp3
+445:Words.mp3
+446:Y Si Fuera Ella (Live At The Royal Albert Hall  2012).mp3
+447:Yo Sé Que No Es Feliz (En Vivo).mp3
+448:Yo Te Recuerdo (Version Salsa).mp3
+449:You Know I'm No Good.mp3
+450:You're the One That I Want.mp3
+451:Zombie.mp3
 playlist_end

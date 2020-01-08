@@ -1,0 +1,4 @@
+#!/bin/sh
+
+## Establecer un wallpaper aleatorio utilizando 'feh'
+feh --bg-fill --randomize --no-fehbg $HOME/Wallpaper/* &

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# V0.3_3
+# Script para descargar una lista personalizada con direcciones para bloquearlas 
+# a través del fichero hosts
+
+# Para automatizar este proceso se recomienda crear una tarea (crontab) y ajustarla a las necesidades del usuario (diario, semanal
+# mensual, etc)
+
+# Realizar copia de seguridad del fichero hosts previo
+echo -e "\e[1;32mCreando copia de seguridad del fichero hosts...\e[0m"; cp /etc/hosts /etc/hosts.bak &&  sleep 1s; echo -e "\e[33mOK\e[0m"
+
+# Descargar lista mas reciente del repositorio y copiarlo al fichero hosts
+echo -e "\e[1;32mDescargando y copiando lista actualizada para fichero hosts...\e[0m"; wget -O /etc/hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts && sleep 1s; echo -e "\e[33mOK\e[0m" 
+
+# Agregando lista personalizada de páginas al fichero hosts
+echo -e "\e[1;32mAgregando parche de lista personalizada al fichero hosts...\e[0m"; cat /home/skynet/Datos/Git_Hub/Void_Linux/otros/parche >> /etc/hosts; sleep 2; doas sv restart dhcpcd && 
+
+# Notificacion de actualizacion del fichero
+echo -e "\e[1;36mTarea finalizada. Fichero host actualizado\e[0m"; notify-send -t 5000 -i /home/skynet/.icons/status/hosts_update.png "Tarea finalizada" 'Fichero hosts actulizado'

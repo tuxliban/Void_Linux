@@ -1,50 +1,50 @@
-rename Trabajo_14.docx
-rename Trabajo_1.dotx
-rename Tarea12.docx
-rename Tarea14.docx
-rename Actividad_02.xlsx
-rename Actividad02.odt
-rename A4_JAL.odt
-rename A3_RBSM.doc
-rename A3_RBSM.xlsx
-rename A3_RBSM.pdf
-search RBSM
-rename x86_64-dotconfig.bak1
-rename custom_void.bak
-rename custom_void}
-rename x86_64-dotconfig
-shell aunpack li
-rename patch-4.14.81un.xz
-shell aunpack patch-4.14.81.xz
-shell aunpack patch-4.14.80-81.xz
-rename es_MX.oxt1
-rename README.md
-open_with micro
-open_with 
-rename Actividad3_CuadroComparativo.docx
-mkdir Actividad_9
-rename GPAP_Actividad-3.docx
-mkdir Universidad UAL
-mkdir Admon. calidad
-mkdir Formulación y evaluación de proyectos
-open_with nano
-search linux4.14
-rename El_Planeta_de_los_Simios_Confrontación.mp4
-rename El Planeta de los Simios. La Guerra.mp4
-rename IMplementacion de Kaisen en Mexico.pdf
-rename Sistema Kaizen en la administración.pdf
-rename La Monja.mp4
-rename GPAP_Actividad-5.docx
-rename FreeBSD-12.0-STABLE-i386-20181213-memstick.img
-rename 1 пабликk
-rename 12 Años de Esclavitud.mp4
+rename x86_64-dotconfig-custom
+shell udevil umount KINGSTON\ 4G
+search dialog
+rename hosts_update
+rename feed-void
+
+search cac
+search lo
+wq
+search scrot
+rename st-delkey-20160727-308bfbf.diff
+rename st-scrollback-20190331-21367a0.diff
+rename 01-st-scrollback-20190331-21367a0.diff
+rename 02-st-delkey-20160727-308bfbf.diff
+shell aunpack 
+rename Actividad_04.xlsx
+mkdir templates
+rename dropbox-dist
+mkdir patches
+mkdir Configuraciones
+rename config.h
+rename config.def
+rename config.def.h
+rename st-config.def.h
+rename dwm-config.def.h
+rename st-scrollback-0.8.2.diff
+rename 1-st-scrollback-0.8.2.diff
+rename 2-st-scrollback-mouse-0.8.diff
+shell aunpack st-0.8.2.tar.gz
+rename Marcelo Bremer
+rename Etapa1_Equipo_DeliCake_Francisco.docx
+rename Etapa1_Equipo2_DeliCake_Francisco.docx
+rename Anexo_Evidencia_01.xlsx
+rename logo_void.jpeg
+q
+open_with ranger
+shell aunpack Ejercicios\ 01
+shell aunpack Ejercicios\ 02
+search kama
+rename dwm-r1615-mpdcontrol.diff.bak
+rename dwm-systray-20190208-cb3f58a.diff.bak
+rename config.def.h.bak
+open_with vim
+search log
+shell aunpack dwm-6.2.tar.gz
 open_with leafpad
-rename custom-kernel
-rename KINGSTON 4G
-mkdir Custom
-search guia
-shell unrar x COR12+crk.rar
-shell rar -x COR12+crk.rar
-mkdir Corel_Draw_12
+open_with mplayer
+open_with mpv
+open_with 
 delete
-rename Papás.png

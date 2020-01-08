@@ -1,0 +1,14 @@
+#!/bin/sh
+
+while true; do
+	DATE=$(date +" %a %d %b  %R")
+	MEM=$(free -h | awk '/^Mem:/ {print $3}')
+	CPU=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
+	BATTERY=$(acpi -b | awk '{print $3, $4}' | tr -d ',')
+	CLIMA=$(curl -s wttr.in/$LOCATION?format=1 | grep -o "[0-9].*")
+	BRILLO=$(light)
+	PAPELERA=$(find ~/.local/share/Trash/files/ -maxdepth 1 | wc -l)
+#	xsetroot -name " $MEM |  $CPU | $BATTERY | $DATE"
+	xsetroot -name " $CLIMA | $MEM | $CPU | ☀ $BRILLO |  $PAPELERA | $BATTERY | $DATE"
+	sleep 60 
+done 
