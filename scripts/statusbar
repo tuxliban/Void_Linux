@@ -8,7 +8,6 @@ while true; do
 	CLIMA=$(curl -s wttr.in/$LOCATION?format=1 | grep -o "[0-9].*")
 	BRILLO=$(light)
 	PAPELERA=$(find ~/.local/share/Trash/files/ -maxdepth 1 | wc -l)
-#	xsetroot -name " $MEM |  $CPU | $BATTERY | $DATE"
 	xsetroot -name " $CLIMA | $MEM | $CPU | ☀ $BRILLO |  $PAPELERA | $BATTERY | $DATE"
 	sleep 60 
 done 
