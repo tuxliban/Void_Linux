@@ -43,22 +43,26 @@ man() {
 export PAGER="less"                             # Paginador predeterminado
 export EDITOR="vim"                             # Editor de texto predeterminado
 export TERM="xterm"                             # Emulador de consola predeterminado
-export BROWSER="firefox"                        # Navegador web predeterminado
+#export BROWSER="firefox"                        # Navegador web predeterminado
+#export BROWSER="chromium"                        # Navegador web predeterminado
 export READER="zathura"                         # Lector PDF predeterminado
+export IMAGEVIEWER="feh"			# Visor de imanenes predeterminado
+
 export PATH="/usr/lib/ccache/bin/:$PATH"
 
 # Variables de entorno para nnn
 export NNN_OPENER=xdg-open
 #export NNN_FALLBACK_OPENER=xdg-open
-export NNN_BMS='d:~/Datos/Dropbox/Tareas;t:~/Datos/Telegram;D:~/Descargas;s:~/Datos/Capturas;p:~/.local/share/Trash/files'   # Marcadores
+export NNN_BMS='d:~/Datos/Dropbox/Tareas;t:~/Datos/Telegram;D:~/Descargas;s:~/Datos/Capturas;p:~/.local/share/Trash/files;P:~/Datos/.Trash-1000/files'   # Marcadores
 export NNN_PLUG="i:sxiv"                        # Plugins
 export NNN_USE_EDITOR=1                         # Usar el $EDITOR para abrir archivos de texto
-export NNN_CONTEXT_COLORS="2136"                # Usar un color distinto para cada contexto (pestañas)
+export NNN_CONTEXT_COLORS="2631"                # Usar un color distinto para cada contexto (pestañas)
 export NNN_TRASH=1                              # Mover archivos a papelera en lugar de eliminar definitivamente
 export NNN_READER="zathura"
 
 #---------------------------------------------------- Alias para XBPS -------------------------------------------------------------
 
+alias xi='doas xbps-install -S'
 alias in='doas xbps-install'					# Instalación sencilla
 alias xc='doas xbps-remove -Ov'					# Eliminar caché de versiones anteriores de paquetes
 alias xo='doas xbps-remove -ov'					# Eliminar paquetes huerfanos
@@ -82,7 +86,7 @@ alias empty='trash-empty'						# Vaciar papelera de reciclaje
 alias du='du -bsh'						# Mostrar tamaño directorios
 alias cp='rsync -rh --progress'					# Copiar archivos y directorios con informacion de transferencia
 alias Sync='rsync -Prtvu --delete'				# Sincronización de directorios
-alias dropbox='cd ~/.dropbox-dist && ./dropboxd &'		# Iniciar Dropbox
+alias dropbox='rclonesync.py Dropbox: /home/skynet/Datos/Dropbox --check-access --rclone-args -P --checkers=16 --transfers=8 --checksum'	# Sync manual de Dropbox
 alias find='find . -name'					# Buscar FIND
 alias zombie='ps -el | grep 'Z''				# Mostrar procesos zombies
 alias net='doas sv restart dhcpcd'				# Reiniciar servicio de conexión wifi
@@ -94,11 +98,11 @@ alias yt='youtube-dl -x --audio-format mp3'			# Descargar audio youtube
 
 DEVICE=$(iw dev | grep Interface | cut -d " " -f2)
 alias potencia='doas iw dev $DEVICE scan | egrep "SSID|signal|\(on"'
-alias nnn='nnn -dn'
+alias nnn='nnn -d'
 
 # Sincronización nube Dropbox
-alias dlocal='rclone -P sync /home/skynet/Datos/Dropbox/Tareas Dropbox:Tareas'
-alias dremote='rclone -P sync Dropbox:Tareas /home/skynet/Datos/Dropbox/Tareas'
+alias dlocal='rclone -P sync --checkers=16 --transfers=8 --checksum /home/skynet/Datos/Dropbox Dropbox:'
+alias dremote='rclone -P sync --checkers=16 --transfers=8 --checksum Dropbox: /home/skynet/Datos/Dropbox'
 
 # Sincronización nube Box
 alias bxlocal='rclone -v -P sync /home/skynet/Datos/box_cloud Box: '
