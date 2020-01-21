@@ -1,0 +1,28 @@
+#########################################################################################
+#	Minuto (0 - 59)									#
+#	|	Hora (0 - 23)								#
+#	|	|	Día del mes (1 -31)						#
+#	|	|	|	Mes (1 - 12)						#
+#	|	|	|	|	Día de ka semana (0 - 6 donde 0=Domingo)	#
+#	|	|	|	|	|	Comandos				#
+#	*	*	*	*	*	*					#
+#########################################################################################
+
+# Notificaciones de actualizaciones (cada seis horas)
+DISPLAY=:0.0
+	0	*/6	*	*	*	/home/skynet/Datos/Git_Hub/Void_Linux/scripts/feed-void
+
+# Descargar actualizaciones para el fichero hosts cada jueves a las 10 pm (bloquear publicidad)
+	0	22	*	*	4	sudo /home/skynet/Datos/Git_Hub/Void_Linux/scripts/hosts
+
+# Revisión del estado de bateria cada 10 minutos
+	*/10	*	*	*	*	/home/skynet/Datos/Git_Hub/Void_Linux/scripts/bateria
+
+# Wallpaper aleatorio cada 30 minutos
+	*/30	*	*	*	*	/home/skynet/Datos/Git_Hub/Void_Linux/scripts/wallpaper
+
+# Revisar estado del clima cada 10 minutos
+	*/10	*	*	*	*	/home/skynet/Datos/Git_Hub/Void_Linux/scripts/clima
+
+# Sincronizar nube de Dropbox cada 30 minutos
+	*/30	*	*	*	*	rclonesync.py Dropbox: /home/skynet/Datos/Dropbox --check-access --rclone-args --checkers=16 --transfers=8 --checksum >> ~/.rclonesyncwd/log/dropbox 2>&1
