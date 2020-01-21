@@ -25,6 +25,6 @@ if [  "$porcentaje" -le 25 ]; then
 fi
 
 # Si el porcentaje de la bateria es igual al 100% mostrar el siguiente mensaje
-if [ "$porcentaje" -eq "100" ]; then
-	notify-send --urgency=normal -i $HOME/.icons/status/battery_charged.png "Bateria cargada" "Puede desconectar el cargador"
-fi
+#if [ "$porcentaje" -eq "100" ]; then
+#	notify-send --urgency=normal -i $HOME/.icons/status/battery_charged.png "Bateria cargada" "Puede desconectar el cargador"
+#fi
