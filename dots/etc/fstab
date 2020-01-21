@@ -2,7 +2,7 @@
 # See fstab(5).
 #
 # <UUID>					<dir>				<type>		<options>		<dump>	<pass>
-UUID=39b09ece-b3c5-4d72-b8a2-7f1611504820	/				ext2		defaults		0	1	# Partición raíz
+UUID=406a5237-d431-4754-aa88-8c93d468c538	/				ext4		defaults		0	1	# Partición raíz
 UUID=95abee86-9bcf-40d6-83bd-2afd30e78e90 	none				swap		sw			0	0	# Área de intercambio
 UUID=7EE1-A537					/boot/efi			vfat		defaults		0	2	# Partición de arranque
 UUID=b7c453a3-332b-4feb-9e57-29a3c08f6fb5	/home				ext4		defaults		0	2	# Partición home
