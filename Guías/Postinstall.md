@@ -24,7 +24,7 @@
 		* [Activar persistencia en doas](#Activar-persistencia-en-doas)
 		* [No ingresar la contraseña](#No-ingresar-la-contraseña)
 		* [Permisos específicos para usuarios](#Permisos-específicos-para-usuarios)
-		* [Negar la ejecución de comandos](#Negar-la-ejecución-de-comandos]
+		* [Negar la ejecución de comandos](#Negar-la-ejecución-de-comandos)
 * [Sevicios de runit](#Servicios-de-runit)
 * [Conexión a internet](#Conexión-a-internet)
 	* [Ethernet](#Ethernet)
