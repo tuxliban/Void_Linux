@@ -2,7 +2,6 @@
 
 -----
 
-
 ## Authors
 Telegram
 
@@ -10,7 +9,14 @@ Telegram
 * @lumaro Lumaro
 -----
 
+## Content
+* [Introduction](#Introduction)
+* [Creating the sandox (container)](#Creatin-the-sandbox-(container))
+* [Endnotes](#Endnotes)
+* [Anexxes](#Anexxes)
+-----
 
+<a id="Introduction"></a>
 ## Introduction
 When the Musl version of Void is installed, some users may have noticed that there are some programs that cannot be used natively due to the incompatibility of the standard Glibc and Musl C libraries. (Anonymous, 2015).
 
@@ -22,7 +28,7 @@ As Glibc is almost a standard in most GNU / Linux distributions, it is almost 10
 
 -----
 
-
+<a id="Creatin-the-sandbox-(container)"></a>
 ## Creating the sandbox (container)
 As mentioned above, if the Musl version is used in Void (or another distro that supports this library) they will not be able to run binaries that do not have an open source license or similar. It will even be impossible to try running i686 (32-bit) architecture programs.
 
@@ -54,7 +60,7 @@ You may wonder what does the command line above mean?
  *You have to accept to continue with the installation*
  
 ![02](Images/02.png)
- ***Author's note:** I replaced sudo with doas*
+ **Author's note:** I replaced sudo with *doas*
 
 5.- Once you have configured and installed the necessary packages, you have to create a C program that will help us execute the container binaries.
 
@@ -207,17 +213,14 @@ glibc megasync
 
 -----
 
-
-
+<a id="Endnotes"></a>
 ## Endnotes
 * The installation and execution process of compiled binaries for the Glibc library will be the same.
 * If desired, you can add shortcuts or keyboard shortcuts, but the process will depend on the configuration and desktop that the user has.
 
 -----
 
-
-
-
+<a id="Anexxes"></a>
 ## Anexxes
 
 If you want to install the following packages, install their respective dependencies as well
@@ -255,9 +258,7 @@ If you want to install the following packages, install their respective dependen
 
 -----
 
-
-
-
+<a id="References"></a>
 ## References
 * Alejandroliu. (2019). Void Glibc in Musl. Github [Website]: https://github.com/alejandroliu/0ink.net/blob/master/snippets/void-glibc-in-musl/glibc.c
 * Anonymous. (August 16th, 2015). Difference between Musl and non-Musl ISOs? Reddit [Website]. https://www.reddit.com/r/voidlinux/comments/3h8aug/difference_between_musl_and_nonmusl_isos/
@@ -265,8 +266,6 @@ If you want to install the following packages, install their respective dependen
 * Voidlinux (2017). The Advent of Void: Day 4: containers. Voidlinux [Website]: https://voidlinux.org/news/2017/12/advent-containers.html
 
 -----
-
-
 
 GUIDE TO CREATING A GLIBC CONTAINER IN VOID MUSL by [Tuxliban Torvalds in collaboration with Lumaro ](https://www.dropbox.com/s/4nbh5f1xva84h1m/Contenedor_Void.pdf?dl=0)is distributed under a [Creative Commons Attribution Share-Alike 4.0 International License.](http://creativecommons.org/licenses/by-sa/4.0/)
 Based on a work in https://github.com/alejandroliu/0ink.net/blob/master/snippets/void-glibc-in-musl/glibc.c
