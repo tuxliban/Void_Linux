@@ -34,6 +34,7 @@
 
 -----
 
+<a id="Introducción"></a>
 ## Introducción
 
 El método de instalación mediante chroot en lugar de la instalación por defecto mediante el menú basado en ncurses, nos aportará un mayor control sobre los paquetes y configuración que se instalarán en nuestro sistema. 
@@ -46,6 +47,7 @@ Antes de comenzar el proceso de instalación, debemos fijarnos si el comando se 
 
 -----
 
+<a id="Preparar-el-sistema-de-archivos"></a>
 ## Preparar el sistema de archivos
 
 Antes de comenzar con la instalación del sistema, es necesario llevar a cabo el proceso de particionamiento del disco. En nuestro caso nos apoyaremos de crear las particiones de la herramienta [cfdisk](https://man.voidlinux.org/cfdisk.8) que está incluída en las ISO’s que distribuye Void.
@@ -73,6 +75,7 @@ Procedemos a formatear las particiones:
 
 -----
 
+<a id="Crear-punto-de-montaje-para-el-nuevo-sistema-de-archivos-(raíz)"></a>
 ## Crear punto de montaje para el nuevo sistema de archivos (raíz)
 
 Dado que esta guía se basa en el supuesto de que la tabla de particiones es tipo GPT, entonces será necesario de un punto de montaje especial para el sistema EFI. Para ello montaremos primero la partición que se ha designado para el sistema raíz:
@@ -99,10 +102,12 @@ Montar la partición que se ha designado para el home del usuario:
 
 -----
 
+<a id="Instalación-del-sistema"></a>
 ## Instalación del sistema
 
 Como se mencionó anteriormente, Void Linux puede instalarse mediante chroot siguiendo dos métodos: a través de XBPS descargando el sistema del repositorio o descomprimiendo un tarball que ya contiene un sistema base.
 
+<a id="XBPS"></a>
 ### XBPS
 
 Si escogió este método, tendrá que elegir el mirror más cercano a usted. Para ver cuáles están disponibles consulte este [artículo](https://docs.voidlinux.org/xbps/repositories/mirrors/index.html)
@@ -151,6 +156,7 @@ Dependiendo de la aquitectura que haya elegido y tomando como ejemplo que se sel
 **NOTA 4:** Al instalar *base-system* tener en cuenta que se tiene menos control de los paquetes instalados para el sistema ya que de manera predeterminada instala los metapaquetes *linux, linux-firmware, wifi-firmware*, además de un paquete que no es de mucha utilidad: *void-artwork*
 Por lo tanto, con una instalación mínima es posible escoger qué paquetes realmente necesita y no tener en el sistema paquetes que nunca utilizará (*linux-firmware-amd linux-firmware-nvidia linux-firmware-intel ipw2100-firmware ipw2200-firmware zd1211-firmware*) o una versión de kernel que reemplazará después.
 
+<a id="Tarball-rotfs"></a>
 ### Tarball rootfs
 
 Descargar del siguiente [link](https://alpha.de.repo.voidlinux.org/live/current/) la versión que desea instalar: glibc o musl.
@@ -165,10 +171,12 @@ Una vez seleccionado el tarball proceder a descomprimirlo en la partición que s
 
 -----
 
+<a id="Configuracion"></a>
 ## Configuración
 
 A partir de estos pasos y exceptuando la instalación base del sistema usando un tarball, la metodología aplicará a ambos métodos, tanto para XBPS como para ROOTFS.
 
+<a id="Consfigurar-jaula-chroot"></a>
 ### Configurar jaula chroot
 
 Montar los directorios **sys dev proc** para el correcto funcionamiento de la jaula chroot:
@@ -183,6 +191,7 @@ Se procede a ingresar a la jaula chroot y para mayor comodidad se cambia el prom
 	
 	# PS1='(chroot) # ' chroot /mnt /bin/bash
 
+<a id="Instalación-del-sistema-(ROOTFS)"></a>
 #### Instalación de sistema (ROOTFS)
 
 Debido a que los tarball no tienen una fecha de publicación reciente, suelen estar desactualizados, por lo que una vez que se ha extraido el contenido en la partición que se utilizará como directorio raíz, hay que proceder a actualizar los paquetes:
@@ -190,6 +199,7 @@ Debido a que los tarball no tienen una fecha de publicación reciente, suelen es
 	# xbps-install -uy xbps
 	# xbps-install -Suy
 
+<a id="Configuración-de-la-instalación"></a>
 ### Configuración de la instalación
 
 Crear el hostname para la nueva instalación:
@@ -224,17 +234,21 @@ Generar los archivos locales (sólo para glibc)
 
 	# xbps-reconfigure -f glibc-locales
 
+<a id="Crear-la-contraseña-para-la-cuenta-de-root"></a>
 ### Crear la contraseña para la cuenta de root
 
 	# passwd
 
+<a id="Establecer-permisos-para-la-cuenta-de-root"></a>
 ### Establecer permisos para la cuenta de root
 	
 	# chown root:root /
 	# chmod 755 /	
 
+<a id="Configurar-el-fichero-fstab"></a>
 ### Configurar el fichero fstab
 
+<a id="Modo-avanzado"></a>
 #### Modo avanzado
 
 El fichero fstab (File System TABle) es el encargado de montar las particiones en cada inicio del sistema. Su configuración inicial se puede generar tomando como base las particiones que se tengan montadas en el fichero */proc/monts*, así que se procederemos a copiar dicho fichero en nuestra jaula chroot:
@@ -276,6 +290,7 @@ Al configurar el fstab (File System TABle), es necesario asignar el valor de 1 p
 
 La ventaja de configurar el fstab de este modo es que las particiones serán detectadas por el sistema incluso si tuvieran un nombre y se les modificara más adelante.
 
+<a id="Modo-sencillo"></a>
 #### Modo sencillo
 
 Ahora procederemos a terminar de editar el fichero fstab. Como recordarán, antes de ingresar a la jaula chroot se creó un fichero en texto plano que contiene información que usaremos para definir las particiones que usará el sistema. Procedemos a abrir el fichero y a editarlo:
@@ -323,6 +338,7 @@ tmpfs		/tmp		tmpfs		defaults,nosuid,nodev	0	0	# Partición de tmp montada en la 
 
 -----
 
+<a id="Instalación-del-kernel"></a>
 ## Instalación del kernel
 
 Si no eligió instalar el paquete *base-system* entonces puede continuar con este paso, de lo contrario omitirlo y continuar con el siguiente punto ya que el paquete *base-system* ya incluye un kernel.
@@ -341,24 +357,26 @@ Reemplazar X.XX por la serie del kernel que desea instalar
 
 Dependiendo de su sistema, tendrá que instalar un paquete o varios, las opciones de firmware son *linux-firmware-amd linux-firmware-intel linux-firmware-network linux-firmware-nvidia*
 
-
+<a id="Configurar-archivos-de-arranque"></a>
 ### Configurar archivos de arranque
 
 	# xbps-install -fy linuxX.XX
 
 -----
 
+<a id="Instalación-de-GRUB"></a>
 ## Instalación de GRUB
 
 Usar el comando [grub-install](https://www.gnu.org/software/grub/manual/grub/html_node/Installing-GRUB-using-grub_002dinstall.html) para instalar GRUB en el disco de arranque:
 
+<a id="Para-sistemas-BIOS"></a>
 ### Para sistemas BIOS
 
 ```
 # xbps-install -y grub
 # grub-install --target=i386-pc /dev/sdX
 ```
-
+<a id="Para-sistemas-EFI"></a>
 ### Para sistemas EFI
 
 ```
@@ -368,6 +386,7 @@ Usar el comando [grub-install](https://www.gnu.org/software/grub/manual/grub/htm
 
 -----
 
+<a id="Finalización"></a>
 ## Finalización
 
 Utilice el comando [xbps-reconfigure](https://man.voidlinux.org/xbps-reconfigure.1) para asegurar que todos los paquete que se han instalado han sido configurados apropiadamente:
@@ -382,6 +401,7 @@ El comando anterior hará que dracut genere un initramfs el cual hará que grub 
 
 -----
 
+<a id="Referencias"></a>
 ## Referencias
 * GNU Operating System (s.f.) Installing GRUB using grub-install. Sitio web de Manual Page Search Parameters:https://www.gnu.org/software/grub/manual/grub/html_node/Installing-GRUB-using-grub_002dinstall.html
 * Void Linux (2009). FSCK(8). Sitio web de Manual Page Search Parameters: https://man.voidlinux.org/fsck.8

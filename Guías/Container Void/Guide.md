@@ -10,13 +10,6 @@ Telegram
 * @lumaro Lumaro
 -----
 
-## Content
-* [Introduction](#Introduction)
-* [Creating the sandbox (container)](#Crating-the-sandbox-(container))
-* [Endnotes](#Endnotes)
-* [Anexxes](#Anexxes)
-* [References](#References)
------
 
 ## Introduction
 When the Musl version of Void is installed, some users may have noticed that there are some programs that cannot be used natively due to the incompatibility of the standard Glibc and Musl C libraries. (Anonymous, 2015).
