@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set -o allexport			# Todos los nuevos parámetros son creados con el atributo 'export'
+
+PATH="${HOME}"/.local/bin:$PATH
+#ENV="/home/skynet/.mkshrc"
+ENV="${HOME}/.kshrc"
+
+# If not running interactively, don't do anything
+case $- in
+	*i*) ;;
+	*) return;;
+esac
+
+#------------------------------------------------- Variables de entorno  ---------------------------------------------------------
+LANG=es_MX.UTF-8			# Configuración regional
+LC_COLLATE=C				# Configuración regional para fines de clasificación de caracteres
+LC_MESSAGES=es_MX			# Localizaciones de los programas almacenados
+PAGER="less"                            # Paginador predeterminado
+TERM='st-256color'                      # Emulador de consola predeterminado
+VISUAL="$EDITOR"
+EDITOR="vim"                            # Editor de texto predeterminado
+BROWSER='icecat'                        # Navegador web predeterminado
+READER="zathura"                        # Lector PDF predeterminado
+IMAGEVIEWER="sxiv"                      # Visor de imanenes predeterminado
+FILE="nnn"
+PF_INFO="ascii title os host kernel wm shell editor uptime pkgs memory palette"
+
+# Autologin en TTY1 mientras no sea root
+if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ] && [ $(id -u) -ne 0 ]; then
+	exec startx
+fi

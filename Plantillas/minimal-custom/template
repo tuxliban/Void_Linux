@@ -1,0 +1,24 @@
+# Template file for 'base-minimal'
+pkgname=minimal-custom
+version=0.1
+revision=1
+build_style=meta
+short_desc="Void Linux base system meta with minimal tools"
+maintainer="Tuxliban Torvalds <tenshalito@gmail.com>"
+license="Public Domain"
+homepage="https://www.voidlinux.org/"
+
+depends="
+ ca-certificates base-files busybox-static coreutils file dash gzip
+ gawk util-linux bsdtar shadow procps-ng iana-etc xbps-static tzdata
+ runit-void removed-packages"
+
+#depends="
+# base-files coreutils findutils diffutils dash grep gzip sed gawk
+# util-linux which tar shadow procps-ng iana-etc xbps nvi tzdata
+# runit-void removed-packages"
+
+case "$XBPS_TARGET_MACHINE" in
+	*-musl) depends+=" musl";;
+	*) depends+=" glibc-locales";;
+esac

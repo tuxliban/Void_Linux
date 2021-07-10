@@ -1,0 +1,15 @@
+[user]
+	name = tuxliban
+	email = <tenshalito@gmail.com>
+[core]
+	editor = vim
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+[pull]
+	rebase = false
+[diff]
+	compactionHeuristic = true # Mejorar diferencias
+

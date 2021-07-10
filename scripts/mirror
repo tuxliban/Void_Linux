@@ -1,0 +1,21 @@
+#!/bin/ksh
+
+# Finlandia 
+1() {
+a=$(ping -c 3 -q alpha.de.repo.voidlinux.org | sed -n 5p | cut -d "/" -f 4)
+echo "Finlandia $a"
+}
+
+# Chicago 
+2() {
+b=$(ping -c 3 -q mirrors.servercentral.com | sed -n 5p | cut -d "/" -f 4)
+echo "Chicago $b"
+}
+
+# Kansas City
+3() {
+c=$(ping -c 3 -q alpha.us.repo.voidlinux.org | sed -n 5p | cut -d "/" -f 4)
+echo "Kansas City $c"
+}
+
+1;2;3

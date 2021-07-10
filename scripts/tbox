@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case $1 in
+	--toggle)
+		if [ "$(pgrep dropbox)" ]; then
+			herbe "Cerrando Dropbox"
+			pkill -f dropbox &
+		else
+			glibc dropbox &
+			herbe "Abriendo Dropbox"
+		fi
+		;;
+	*)
+		if [ "$(pgrep dropbox)" ]; then
+			herbe "Dropbpox ya está funcionando"
+		else
+			herbe "Dropbox desactivado"
+		fi;;
+esac

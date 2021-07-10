@@ -1,0 +1,25 @@
+# Template file for 'nnn'
+pkgname=nnn
+version=3.5
+revision=1
+build_style=gnu-makefile
+hostmakedepends="pkg-config"
+makedepends="ncurses-devel readline-devel gpm-devel"
+short_desc="Missing terminal file browser for X"
+maintainer="Tuxliban Torvalds <tenshalito@gmail.com>"
+license="BSD-2-Clause"
+homepage="https://github.com/jarun/nnn"
+changelog="https://raw.githubusercontent.com/jarun/nnn/master/CHANGELOG"
+distfiles="${homepage}/archive/v${version}.tar.gz"
+checksum=e636d4035499a112a0ad33f1557838132ed2e39d8857c5b219714fe9f64681f3
+
+do_build() {
+	make O_STATIC=1 strip
+}
+
+post_install() {
+	vinstall misc/auto-completion/bash/nnn-completion.bash 644 \
+		usr/share/bash-completion/completions nnn
+
+	vlicense LICENSE
+}

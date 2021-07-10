@@ -1,13 +1,35 @@
-#!/bin/sh
+#!/bin/ksh
 
-while true; do
-	DATE=$(date +" %a %d %b  %R")
-	MEM=$(free -h | awk '/^Mem:/ {print $3}')
-	CPU=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
-	BATTERY=$(acpi -b | awk '{print $3, $4}' | tr -d ',')
-	CLIMA=$(curl -s wttr.in/$LOCATION?format=1 | grep -o "[0-9].*")
-	BRILLO=$(light)
-	PAPELERA=$(find ~/.local/share/Trash/files/ -maxdepth 1 | wc -l)
-	xsetroot -name " $CLIMA | $MEM | $CPU | ☀ $BRILLO |  $PAPELERA | $BATTERY | $DATE"
-	sleep 60 
-done 
+while true;
+do
+DATE=$(date +" %a %d %b  %R")
+TEMP=$(sed 's/000$/°C/' /sys/class/thermal/thermal_zone1/temp)
+MEM=$(free -h | awk '/^Mem:/ {print $3}')
+CPU=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
+VOL() {
+	a=$(amixer sget Master | tail -n1 | sed -r "s/.*\[(.*)\]/\1/")
+	b=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
+
+	if [ $a = 'on' ]; then
+		printf " $b%%"
+	else
+		printf "";
+	fi
+}
+SONG() {
+	if [ "$(pgrep mocp)" ]; then
+		if [ "$(mocp -Q %state)" = "PLAY" ];then
+			SONG=$(mocp -Q %song)
+			if [ -n "$SONG" ]; then
+				echo " $SONG - $(mocp -Q %album) |"
+			else
+				echo " $(mocp -Q %file) |"
+			fi
+		fi
+	else
+		echo ""
+	fi
+}
+xsetroot -name "$(SONG) CPU $CPU | MEM $MEM | TEMP $TEMP | $(VOL) | $DATE"
+	sleep 1
+done

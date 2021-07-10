@@ -1,0 +1,16 @@
+cron -f $HOME/.crontab
+
+# Ocultar puntero del mouse después de un segundo de inactividad
+unclutter --timeout 1 &
+
+# Activar configuración de redshift
+redshift -c ~/.config/redshift/redshift.conf &
+
+# Wallpaper aleatorio
+$HOME/.local/bin/rwallpaper.sh
+
+# Iniciar servidor de sonido mocp
+#mocp -S
+
+# Panel de estado
+slstatus

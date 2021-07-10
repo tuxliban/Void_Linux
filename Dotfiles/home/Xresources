@@ -1,0 +1,85 @@
+! Configuración para SXIV
+Sxiv.background:			black
+
+!--------------------------------------
+! Configuracion para notificaciones con HERBE
+
+! Color de fondo
+!herbe.background_color:			#263238
+herbe.background_color:			#ff0000
+
+! Color del borde
+herbe.border_color:			#ececec
+
+! Color de la fuente
+!herbe.font_color:			#ececec
+herbe.font_color:			#ffffff
+
+! Tipo y tamaño de fuente
+herbe.font_pattern:			ubuntu:size=10:style=bold
+
+! Espacio entre líneas
+herbe.line_spacing:			5
+
+! Relleno
+herbe.padding:				8
+
+! Anchura
+herbe.width:				260
+
+! Tamaño del borde
+herbe.border_size:			1
+
+! Posición
+herbe.pos_x:				5
+herbe.pos_y:				25
+
+! 0 = TOP_LEFT, 1 = TOP_RIGHT, 2 = BOTTOM_LEFT, 3 = BOTTOM_RIGHT
+!herbe.corner: 1
+
+! Duración de la notificación
+herbe.duration:				15
+
+!--------------------------------------
+! Configuracion para notificaciones con XNOTIFY
+
+! Fuente para el encabezado
+xnotify.title.font:			ubuntu:size=10:style=bold
+
+! Fuente para el cuerpo de la notificación
+xnotify.body.font:			ubuntu:size=9
+
+! Color de fondo
+xnotify.background:			#263238
+
+! Color del texto
+xnotify.foreground:			#ececec
+
+! Color del borde
+xnotify.border:				#ececec
+
+! Forma geométrica de la notificación
+xnotify.geometry:			250x0-5+25
+
+! Posición de la notificación
+xnotify.gravity:			NE
+
+! Tamaño del borde (pixeles)
+xnotify.borderWidth:			1
+
+! Espacio entre notificaciones
+xnotify.gap:				5
+
+! Tamaño de la imagen
+xnotify.imageWidth:			0
+
+! Espacio entre el título y cuerpo de la notificación
+xnotify.leading:			5
+
+! Espacio alrededor del contenido de la notificación
+xnotify.padding:			10
+
+xnotify.shrink:				0
+
+! Alineación del texto de la notificación
+xnotify.alignment:			right

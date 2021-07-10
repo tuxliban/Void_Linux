@@ -1,0 +1,9 @@
+#!/bin/sh
+
+[ -f $HOME/.xprofile ] && . $HOME/.xprofile &
+
+[ -h $HOME/.Xresources ] && xrdb $HOME/.Xresources
+
+## Gestor de ventanas
+#exec dwm
+exec startdwm

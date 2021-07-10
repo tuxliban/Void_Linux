@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# Colores tipo bold
+printf '%b' "\033[30;1mGris\033[0m\n"
+printf '%b' "\033[31;1mRojo\033[0m\n"
+printf '%b' "\033[32;1mVerde\033[0m\n"
+printf '%b' "\033[33;1mAmarillo\033[0m\n"
+printf '%b' "\033[34;1mAzul\033[0m\n"
+printf '%b' "\033[35;1mRosa\033[0m\n"
+printf '%b' "\033[36;1mAqua\033[0m\n"
+printf '%b' "\033[37;1mBlanco\033[0m\n"
+printf "\n"
+
+# Colores claros
+printf '%b' "\033[31;2mRojo\033[0m\n"
+printf '%b' "\033[32;2mVerde\033[0m\n"
+printf '%b' "\033[33;2mAmarillo\033[0m\n"
+printf '%b' "\033[34;2mAzul\033[0m\n"
+printf '%b' "\033[35;2mRosa\033[0m\n"
+printf '%b' "\033[36;2mAqua\033[0m\n"
+printf '%b' "\033[37;2mBlanco\033[0m\n"
+printf "\n"
+
+# Colores letra cursiva
+printf '%b' "\033[31;3mRojo\033[0m\n"
+printf '%b' "\033[32;3mVerde\033[0m\n"
+printf '%b' "\033[33;3mAmarillo\033[0m\n"
+printf '%b' "\033[34;3mAzul\033[0m\n"
+printf '%b' "\033[35;3mRosa\033[0m\n"
+printf '%b' "\033[36;3mAqua\033[0m\n"
+printf '%b' "\033[37;3mBlanco\033[0m\n"
+printf "\n"
+
+# Colores letra subrayada
+printf '%b' "\033[31;4mRojo\033[0m\n"
+printf '%b' "\033[32;4mVerde\033[0m\n"
+printf '%b' "\033[33;4mAmarillo\033[0m\n"
+printf '%b' "\033[34;4mAzul\033[0m\n"
+printf '%b' "\033[35;4mRosa\033[0m\n"
+printf '%b' "\033[36;4mAqua\033[0m\n"
+printf '%b' "\033[37;4mBlanco\033[0m\n"
+printf "\n"
+
+# Colores y texto parpadeando
+printf '%b' "\033[31;5mRojo\033[0m\n"
+printf '%b' "\033[32;5mVerde\033[0m\n"
+printf '%b' "\033[33;5mAmarillo\033[0m\n"
+printf '%b' "\033[34;5mAzul\033[0m\n"
+printf '%b' "\033[35;5mRosa\033[0m\n"
+printf '%b' "\033[36;5mAqua\033[0m\n"
+printf '%b' "\033[37;5mBlanco\033[0m\n"

@@ -1,0 +1,60 @@
+#---------------------------------------------------- Alias para XBPS -------------------------------------------------------------
+
+alias doas="su -c root -c"
+alias xi="xbps-install.static -S"                                   # Instalación sencilla
+alias xiu='xi -u'                                               # Actualizar sistema
+
+# Pendiente de componer
+alias xc='doas xbps-remove.static -Ov'                                 # Eliminar caché de versiones anteriores de paquetes
+alias xo='doas xbps-remove.static -ov'                                 # Eliminar paquetes huerfanos
+alias xr='doas xbps-remove.static -R'                                  # Eliminar paquetes con sus dependencias
+alias hold='doas xbps-pkgdb.static -m hold'                            # Congelar paquetes
+alias unhold='doas xbps-pkgdb.static -m unhold'                        # Descongelar paquetes
+# ---
+
+alias pkg='echo "Total de paquetes instalados:"\ && xbps-query.static -l | wc -l &&\
+ echo "Paquetes instalados manualmente:"\ && xbps-query.static -m | wc -l' 		# Mostrar total de paquetes instalados
+alias manual='xbps-query.static -m | column'	                                # Mostrar lista de paquetes instalados manualmente
+alias xqo='xbps-query.static -R --property=build-options'              # Revisar opciones de compilación del binario precompilado
+alias xso='./xbps-src show-options'
+alias xcl='./xbps-src clean-repocache && ./xbps-src clean && ./xbps-src remove-autodeps && ./xbps-src purge-distfiles'
+alias xupdate='./xbps-src bootstrap-update'
+alias signx='xbps-rindex.static --privkey private.pem --sign-pkg'
+alias xsys='./xbps-src show-sys-updates'
+alias extract='./xbps-src -I'
+
+#---------------------------------------------------- Otros Alias personalizados -------------------------------------------------------------
+
+alias top='top -d 1 -u skynet'                                  # Mostrar procesos del usuario
+alias du='du -bsh'                                              # Mostrar tamaño directorios
+alias cp='cpg --recursive -g'                                   # Copiar archivos y directorios mostrando información de transferencia
+alias mv='mvg -g'                                               # Moverar archivos y directorios mostrando la información de transferencia
+alias Sync='rsync -Prtvu --delete'                              # Sincronización de directorios
+alias find='find . -name'                                       # Buscar FIND
+#alias 7z='7z -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on'       # Maximo nivel de compresion de archivos
+
+# Pendiente de componer
+alias pg='doas ping -c 2 8.8.8.8'                               # Función incluida en busybox
+alias ping='doas ping'            		                # Función incluida en busybox
+# ---
+
+alias yt='youtube-dl -x --audio-format mp3'                     # Descargar audio youtube
+alias mocp='mocp -T moca_theme'
+alias cpi='cpupower frequency-info'
+alias su='su -l'
+alias n3='nnn'
+alias git-st='git status --short --branch'
+alias gpull='git fetch upstream && git merge upstream/master'
+alias cal='cal -w -3'
+alias l='clear'
+alias zip='bsdtar -a -cf'
+alias unzip='bsdtar -xf'
+
+# Sincronización nube Box
+alias bxlocal='rclone sync -P /home/skynet/Datos/box_cloud Box: '
+alias bxremote='rclone sync -P Box: /home/skynet/Datos/box_cloud'
+
+#---------------------------------------------------- Salida estándar coloreada -------------------------------------------------------------
+alias grep='grep --color=auto'                                  # Agregar color a la salida de "grep"
+alias egrep='egrep --color=auto'                                # Agregar color a la salida de "grep"
+

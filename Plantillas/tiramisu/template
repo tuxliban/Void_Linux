@@ -1,0 +1,13 @@
+# Template file for 'tiramisu'
+pkgname=tiramisu
+version=1.0
+revision=1
+build_style=gnu-makefile
+hostmakedepends="pkg-config"
+makedepends="libglib-devel"
+short_desc="Desktop notifications, the UNIX way"
+maintainer="tuxliban <tenshalito@gmail.com>"
+license="MIT"
+homepage="https://github.com/Sweets/tiramisu"
+distfiles="${homepage}/archive/${version}.tar.gz"
+checksum=4681788288c17aa1fd75b972c3d9661a13c164d810520fc838837a748baf669e

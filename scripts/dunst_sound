@@ -1,2 +1,0 @@
-#!/bin/sh
-mpv $HOME/Datos/Git_Hub/Void_Linux/dots/config/dunst/beep.wav

@@ -1,0 +1,51 @@
+# Establecer PCM predeterminado
+## La opción 'pcm' afecta a la tarjeta y al dispositivo que se pueden utilizar para la reproducción de audio
+pcm.!default {
+	type hw
+	card PCH
+	device 3	# HDMI
+}
+
+## La opción 'ctl' afecta a la tarjeta que es utilizada por la utilidades de control como alsamixer
+#ctl.!default {
+#	type hw
+#	card PCH
+#	device 3	# HDMI
+#}
+
+# Remuestreo de alta calidad
+#defaults.pcm.rate_converter "speexrate_medium"
+
+# Mezclar con software (dmix)
+#pcm.dsp {
+#	type plug
+#	slave.pcm "dmix"
+#}
+
+#pcm.!default {
+#	type plug
+#	slave.pcm "hdmi"
+#}
+#
+#-----------------------------------------------------------
+#
+
+
+#pcm.!default {
+#	type plug
+#	slave.pcm "softvol"
+#}
+
+#pcm.softvol {
+#	type softvol
+#	slave {
+#		pcm "sndio"
+#	}
+#	control {
+#	name "Pre-Amp"
+#	card 0
+#	}
+#	min_dB -5.0
+#	max_dB 20.0
+#	resolution 6
+#}

@@ -1,0 +1,17 @@
+# Template file for 'sdhcp'
+pkgname=sdhcp
+version=0.1
+revision=1
+wrksrc=${pkgname}
+build_style=gnu-makefile
+short_desc="IPv4 simple dhcp client"
+maintainer="tuxliban <tenshalito@gmail.com>"
+license="MIT"
+homepage="https://git.disroot.org/tuxliban/sdhcp"
+distfiles="${homepage}/archive/${version}.tar.gz"
+checksum=318b0c2a1d6236c43995372fcc3c0d190896b6cd4ca8ca67ccbc963a2eba7c7f
+
+do_build() {
+	[ -e ${FILESDIR}/Makefile ] && cp ${FILESDIR}/Makefile Makefile
+	export CFLAGS=${CFLAGS}
+}

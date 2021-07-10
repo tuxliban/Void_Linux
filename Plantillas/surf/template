@@ -1,0 +1,32 @@
+# Template file for 'surf'
+pkgname=surf
+version=2.1
+revision=2
+wrksrc=${pkgname}
+build_style=gnu-makefile
+hostmakedepends="pkg-config git"
+makedepends="webkit2gtk-devel gcr-devel"
+depends="xprop dmenu"
+short_desc="Simple web browser based on WebKit/GTK+"
+maintainer="Tuxliban Torvalds <tenshalito@gmail.com>"
+license="MIT"
+homepage="http://surf.suckless.org"
+#distfiles="http://dl.suckless.org/surf/$pkgname-$version.tar.gz"
+#checksum=72e582920ba25a646203e93c2d2331d87f03037a28894d6c7e99af00ee043257
+
+do_fetch() {
+	git clone https://github.com/Babkock/surf.git ${wrksrc} --depth=1
+	cd ${wrksrc}
+	git checkout master
+}
+
+do_build() {
+# Archivo de configuración
+	[ -e ${FILESDIR}/config.h ] && cp ${FILESDIR}/config.h config.h
+# Configuración con parche de motor de búsqueda
+	[ -e ${FILESDIR}/surf.c ] && cp ${FILESDIR}/surf.c surf.c
+}
+
+post_install() {
+	vlicense LICENSE
+}

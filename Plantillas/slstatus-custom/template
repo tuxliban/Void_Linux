@@ -1,0 +1,31 @@
+# Template file for 'slstatus'
+pkgname=slstatus
+version=20201130
+revision=1
+wrksrc="${pkgname}"
+build_style=gnu-makefile
+hostmakedepends="git pkg-config"
+makedepends="alsa-lib-devel libX11-devel"
+short_desc="Suckless status monitor for dwm"
+maintainer="Tuxliban Torvalds <tenshalito@gmail.com>"
+license="ISC"
+homepage="https://tools.suckless.org/slstatus/"
+
+do_fetch() {
+	git clone https://github.com/drkhsh/slstatus.git ${wkrsrc} --depth 1
+	cd ${wrksrc}
+	git checkout master
+}
+
+pre_build() {
+# Archivo de configuración
+	[ -e ${FILESDIR}/config.h ] && cp ${FILESDIR}/config.h config.h
+# Modulo de bateria personalizado
+	[ -e ${FILESDIR}/battery.c ] && cp ${FILESDIR}/battery.c components/battery.c
+	sed -i -e 's|^CFLAGS *=|override CFLAGS +=|g' \
+		-e 's|^LDFLAGS *=|override LDFLAGS +=|g' config.mk
+}
+
+post_install() {
+	vlicense LICENSE
+}
